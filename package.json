@@ -2,6 +2,7 @@
   "name": "@twa-dev/mark42",
   "version": "0.0.9",
   "main": "dist/index.js",
+  "sideEffects": false,
   "keywords": [
     "@twa-dev",
     "telegram",
