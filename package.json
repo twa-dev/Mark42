@@ -1,5 +1,5 @@
 {
-  "name": "@twa-dev/untitled-project",
+  "name": "@twa-dev/mark42",
   "version": "0.0.5",
   "main": "dist/index.js",
   "keywords": [
@@ -8,7 +8,7 @@
     "uikit",
     "bot"
   ],
-  "repository": "https://github.com/twa-dev/untitled-project.git",
+  "repository": "https://github.com/twa-dev/mark42.git",
   "author": "Artur Stambultsian <bumbledos@gmail.com>",
   "license": "MIT",
   "dependencies": {
