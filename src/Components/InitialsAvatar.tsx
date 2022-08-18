@@ -51,7 +51,7 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
 
     return (
       <div
-        className={classNames(root, className)}
+        className={classNames(root, `${root}__theme`, className)}
         style={
           {
             width: size,
