@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 tsconfig.json
+linaria.config.js
 .eslintrc
 .eslintignore
 .prettierrc
