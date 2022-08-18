@@ -13,12 +13,12 @@ const root = css`
   line-height: var(--font-size);
 
   &__apple {
-    font-family: "ui-rounded", serif;
+    font-family: "ui-rounded", sans-serif;
     font-weight: 700;
   }
 
   &__material {
-    font-family: "Roboto", serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
   }
 `;
