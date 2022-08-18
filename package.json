@@ -1,6 +1,6 @@
 {
   "name": "@twa-dev/untitled-project",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "keywords": [
     "@twa-dev",
