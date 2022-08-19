@@ -1,4 +1,4 @@
-import { CSSProperties, memo } from "react";
+import { CSSProperties, HTMLAttributes, memo } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { css } from "@linaria/core";
 
@@ -22,12 +22,10 @@ const root = css`
   }
 `;
 
-interface InitialsAvatarProps {
+interface InitialsAvatarProps extends HTMLAttributes<HTMLElement> {
   size?: number;
   userName: string;
   userId: number;
-  className?: string;
-  style?: CSSProperties;
 }
 
 const bgColors = [
@@ -41,7 +39,7 @@ const bgColors = [
 ];
 
 export const InitialsAvatar = memo<InitialsAvatarProps>(
-  ({ size = 40, className, userId, userName, style }) => {
+  ({ size = 40, className, userId, userName, style, ...restProps }) => {
     const theme = useTheme();
 
     const bgIndex = userId % 7;
@@ -56,6 +54,7 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
 
     return (
       <div
+        {...restProps}
         className={classNames}
         style={
           {
