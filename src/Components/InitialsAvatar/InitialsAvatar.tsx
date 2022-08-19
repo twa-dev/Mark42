@@ -52,13 +52,14 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
     ...restProps
   }) => {
     const theme = useTheme();
+    const resolvedTheme = themeProp || theme;
 
     const bgIndex = userId % 7;
 
     const [color, topColor, bottomColor] = bgColors[bgIndex];
     const [firstName = "", lastName = ""] = userName.split(" ");
 
-    let classNames = `${root} ${root}__${themeProp || theme}`;
+    let classNames = `${root} ${root}__${resolvedTheme}`;
     if (className) {
       classNames += ` ${className}`;
     }
@@ -73,7 +74,7 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
             width: size,
             height: size,
             background:
-              theme === "apple"
+              resolvedTheme === "apple"
                 ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
                 : color,
             "--font-size": `${Math.round(size / 2.2)}px`,
