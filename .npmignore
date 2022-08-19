@@ -7,4 +7,5 @@ linaria.config.js
 .prettierrc
 .gitignore
 .babelrc
+.browserslistrc
 *.log
