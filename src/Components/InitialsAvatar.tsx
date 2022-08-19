@@ -1,7 +1,6 @@
 import { CSSProperties, memo } from "react";
 import { useTheme } from "../hooks/useTheme";
 import { css } from "@linaria/core";
-import classNames from "classnames";
 
 const root = css`
   border-radius: 50%;
@@ -49,9 +48,14 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
     const [color, topColor, bottomColor] = bgColors[bgIndex];
     const [firstName = "", lastName = ""] = userName.split(" ");
 
+    let classNames = `${root} ${root}__${theme}`;
+    if (className) {
+      classNames += ` ${className}`;
+    }
+
     return (
       <div
-        className={classNames(root, `${root}__${theme}`, className)}
+        className={classNames}
         style={
           {
             width: size,
