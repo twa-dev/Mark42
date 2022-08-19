@@ -7,28 +7,32 @@ import {
   useState,
 } from "react";
 import WebApp from "@twa-dev/sdk";
+import { ColorSchemes, Themes } from "../../types";
 
 /* TODO определять тему не по userAgent, а по имени клиента (MacOS, Android, iOS, Desktop, Web),
      который телега нам скоро начнет присылать.  */
-const theme: "apple" | "material" = navigator.userAgent.match(
-  /iOS|iPhone OS|iPhone|iPod|iPad|Mac OS/i
-)
-  ? "apple"
-  : "material";
 
 export const AppearanceContext = createContext<{
-  theme: "apple" | "material";
-  colorScheme: "light" | "dark";
+  theme: Themes;
+  colorScheme: ColorSchemes;
 }>({
   colorScheme: WebApp.colorScheme,
-  theme,
+  theme: "apple",
 });
 
-export const AppearanceProvider: FC<{ children?: ReactNode }> = ({
+export const AppearanceProvider: FC<{
+  children?: ReactNode;
+  theme?: Themes;
+  colorScheme?: ColorSchemes;
+}> = ({
   children,
+  theme = navigator.userAgent.match(/iOS|iPhone OS|iPhone|iPod|iPad|Mac OS/i)
+    ? "apple"
+    : "material",
+  colorScheme: colorSchemeProp,
 }) => {
   const [colorScheme, setColorScheme] = useState<"light" | "dark">(
-    WebApp.colorScheme
+    colorSchemeProp || WebApp.colorScheme
   );
 
   useEffect(() => {
@@ -37,9 +41,9 @@ export const AppearanceProvider: FC<{ children?: ReactNode }> = ({
 
   useEffect(() => {
     WebApp.onEvent("themeChanged", () => {
-      setColorScheme(WebApp.colorScheme);
+      !colorSchemeProp && setColorScheme(WebApp.colorScheme);
     });
-  }, []);
+  }, [colorSchemeProp]);
 
   useEffect(() => {
     document.body.setAttribute("data-color-scheme", colorScheme);
@@ -50,7 +54,7 @@ export const AppearanceProvider: FC<{ children?: ReactNode }> = ({
       theme,
       colorScheme,
     };
-  }, [colorScheme]);
+  }, [colorScheme, theme]);
 
   return (
     <AppearanceContext.Provider value={value}>

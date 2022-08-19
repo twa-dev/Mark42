@@ -1,5 +1,5 @@
 import { CSSProperties, HTMLAttributes, memo } from "react";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 import { css } from "@linaria/core";
 
 const root = css`
@@ -22,7 +22,7 @@ const root = css`
   }
 `;
 
-interface InitialsAvatarProps extends HTMLAttributes<HTMLElement> {
+export interface InitialsAvatarProps extends HTMLAttributes<HTMLElement> {
   size?: number;
   userName: string;
   userId: number;
