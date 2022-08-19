@@ -11,5 +11,6 @@
     "declaration": true,
     "emitDeclarationOnly": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/*.stories.tsx"]
 }
