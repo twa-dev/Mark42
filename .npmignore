@@ -8,4 +8,5 @@ linaria.config.js
 .gitignore
 .babelrc
 .browserslistrc
+.storybook
 *.log

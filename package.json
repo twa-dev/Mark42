@@ -23,17 +23,28 @@
     "@linaria/cli": "^4.1.2",
     "@linaria/core": "^4.1.1",
     "@linaria/react": "^4.1.2",
+    "@linaria/webpack-loader": "^4.1.2",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@twa-dev/sdk": "^0.0.3",
     "@types/babel__core": "^7.1.19",
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
+    "babel-loader": "^8.2.5",
     "browserslist": "^4.21.3",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sha1": "^1.1.1",
     "typescript": "^4.7.4",
     "yarn-release": "^1.10.3"
@@ -44,7 +55,9 @@
   },
   "scripts": {
     "test": "eslint --ext .ts,.tsx ./",
-    "build": "tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist src/**/*.tsx --modules=es2015"
+    "build": "tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist src/**/*.tsx --modules=es2015",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"
