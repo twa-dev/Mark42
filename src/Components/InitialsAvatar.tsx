@@ -27,6 +27,7 @@ interface InitialsAvatarProps {
   userName: string;
   userId: number;
   className?: string;
+  style?: CSSProperties;
 }
 
 const bgColors = [
@@ -40,7 +41,7 @@ const bgColors = [
 ];
 
 export const InitialsAvatar = memo<InitialsAvatarProps>(
-  ({ size = 40, className, userId, userName }) => {
+  ({ size = 40, className, userId, userName, style }) => {
     const theme = useTheme();
 
     const bgIndex = userId % 7;
@@ -58,13 +59,14 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
         className={classNames}
         style={
           {
+            ...style,
             width: size,
             height: size,
             background:
               theme === "apple"
                 ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
                 : color,
-            ["--font-size"]: `${Math.round(size / 2.2)}px`,
+            "--font-size": `${Math.round(size / 2.2)}px`,
           } as CSSProperties
         }
       >
