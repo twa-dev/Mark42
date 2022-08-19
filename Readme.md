@@ -1,5 +1,5 @@
 # mark42
-mark42 is a simple lightweight treeshackable UI library with 0 dependencies
+mark42 is a simple lightweight tree-shakable UI library with 0 dependencies
 for Telegram Web Apps (TWA). 
 
 ## Installation
