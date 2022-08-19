@@ -1,6 +1,7 @@
 import { CSSProperties, HTMLAttributes, memo } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { css } from "@linaria/core";
+import { AppearanceProps } from "../../types";
 
 const root = css`
   border-radius: 50%;
@@ -22,7 +23,9 @@ const root = css`
   }
 `;
 
-export interface InitialsAvatarProps extends HTMLAttributes<HTMLElement> {
+export interface InitialsAvatarProps
+  extends HTMLAttributes<HTMLElement>,
+    AppearanceProps {
   size?: number;
   userName: string;
   userId: number;
@@ -39,7 +42,15 @@ const bgColors = [
 ];
 
 export const InitialsAvatar = memo<InitialsAvatarProps>(
-  ({ size = 40, className, userId, userName, style, ...restProps }) => {
+  ({
+    size = 40,
+    userId,
+    userName,
+    theme: themeProp,
+    className,
+    style,
+    ...restProps
+  }) => {
     const theme = useTheme();
 
     const bgIndex = userId % 7;
@@ -47,7 +58,7 @@ export const InitialsAvatar = memo<InitialsAvatarProps>(
     const [color, topColor, bottomColor] = bgColors[bgIndex];
     const [firstName = "", lastName = ""] = userName.split(" ");
 
-    let classNames = `${root} ${root}__${theme}`;
+    let classNames = `${root} ${root}__${themeProp || theme}`;
     if (className) {
       classNames += ` ${className}`;
     }
