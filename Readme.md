@@ -11,7 +11,13 @@ npm i @twa-dev/sdk  @twa-dev/mark42
 ```tsx
 import { InitialsAvatar } from '@twa-dev/mark42';
 
-<InitialsAvatar userId={12345} userName="Artur Stambultsian" />
+<InitialsAvatar
+  userId={12345}
+  userName="Artur Stambultsian"
+  theme="apple"
+  className="MyAvatar"
+  style={{ marginRight: 10 }}
+/>
 ```
 
 ## Motivation
