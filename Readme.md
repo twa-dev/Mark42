@@ -16,7 +16,7 @@ Mark42 helps you with that. Each component supports different themes and color s
 Therefore, you can focus on logic of your application and Mark42 will make it fancy.
 
 ## Documentation
-Welcome to our https://twa-dev.github.io/Mark42/.
+Welcome to our [Storybook](https://twa-dev.github.io/Mark42/).
 
 ## Usage example
 ```tsx
