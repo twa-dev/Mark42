@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes, memo } from "react";
+import { CSSProperties, FC, HTMLAttributes, memo } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { css } from "@linaria/core";
 import { AppearanceProps } from "../../types";
@@ -41,53 +41,58 @@ const bgColors = [
   ["#ee7aae", "#e0a2f3", "#d669ed"], // pink
 ];
 
-export const InitialsAvatar = memo<InitialsAvatarProps>(
-  ({
-    size = 40,
-    userId,
-    userName,
-    theme: themeProp,
-    className,
-    style,
-    ...restProps
-  }) => {
-    const theme = useTheme();
-    const resolvedTheme = themeProp || theme;
+export const InitialsAvatar: FC<InitialsAvatarProps> =
+  memo<InitialsAvatarProps>(
+    ({
+      size = 40,
+      userId,
+      userName,
+      theme: themeProp,
+      className,
+      style,
+      ...restProps
+    }) => {
+      const theme = useTheme();
+      const resolvedTheme = themeProp || theme;
 
-    const bgIndex = userId % 7;
+      const bgIndex = userId % 7;
 
-    const [color, topColor, bottomColor] = bgColors[bgIndex];
-    const [firstName = "", lastName = ""] = userName.split(" ");
+      const [color, topColor, bottomColor] = bgColors[bgIndex];
+      const [firstName = "", lastName = ""] = userName.split(" ");
 
-    let classNames = `${root} ${root}__${resolvedTheme}`;
-    if (className) {
-      classNames += ` ${className}`;
-    }
+      let classNames = `${root} ${root}__${resolvedTheme}`;
+      if (className) {
+        classNames += ` ${className}`;
+      }
 
-    return (
-      <div
-        {...restProps}
-        className={classNames}
-        style={
-          {
-            ...style,
-            width: size,
-            height: size,
-            background:
-              resolvedTheme === "apple"
-                ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
-                : color,
-            "--font-size": `${Math.round(size / 2.2)}px`,
-          } as CSSProperties
-        }
-      >
-        <div>
-          {firstName && firstName.charAt(0).toUpperCase()}
-          {lastName && lastName.charAt(0).toUpperCase()}
+      return (
+        <div
+          {...restProps}
+          className={classNames}
+          style={
+            {
+              ...style,
+              width: size,
+              height: size,
+              background:
+                resolvedTheme === "apple"
+                  ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
+                  : color,
+              "--font-size": `${Math.round(size / 2.2)}px`,
+            } as CSSProperties
+          }
+        >
+          <div>
+            {firstName && firstName.charAt(0).toUpperCase()}
+            {lastName && lastName.charAt(0).toUpperCase()}
+          </div>
         </div>
-      </div>
-    );
-  }
-);
+      );
+    }
+  );
+
+InitialsAvatar.defaultProps = {
+  size: 40,
+};
 
 InitialsAvatar.displayName = "InitialsAvatar";
