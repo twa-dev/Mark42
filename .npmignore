@@ -13,3 +13,4 @@ linaria.config.js
 .browserslistrc
 .storybook
 *.log
+*.stories.js
