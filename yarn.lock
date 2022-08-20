@@ -2496,7 +2496,7 @@
   dependencies:
     "@twa-dev/types" "^6.2.2"
 
-"@twa-dev/types@^6.2.2", "@twa-dev/types@^6.2.3":
+"@twa-dev/types@^6.2.2":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@twa-dev/types/-/types-6.2.3.tgz#0ccd6bca78afc786a912126a3d944b777f73a4bc"
   integrity sha512-WiHv1FUI5I1bEQG2HWSSQXFm3sPX7fTytQ3rBpd0GrnwWhxNCa5YQDdwpPBj+zMp25VBObbxvBqJ780wxItDsA==

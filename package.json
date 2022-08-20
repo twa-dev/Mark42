@@ -55,6 +55,7 @@
     "yarn-release": "^1.10.3"
   },
   "peerDependencies": {
+    "@twa/sdk": ">=0.0.3",
     "react": ">=16.0.0"
   },
   "scripts": {
@@ -64,7 +65,6 @@
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
-    "@twa-dev/types": "^6.2.3"
+    "@babel/runtime": "^7.18.9"
   }
 }

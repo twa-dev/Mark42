@@ -6,7 +6,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import { WebApp } from "@twa-dev/types";
+import WebApp from "@twa-dev/sdk";
 import { ColorSchemes, Themes } from "../../types";
 
 /* TODO определять тему не по userAgent, а по имени клиента (MacOS, Android, iOS, Desktop, Web),
@@ -16,7 +16,7 @@ export const AppearanceContext = createContext<{
   theme: Themes;
   colorScheme: ColorSchemes;
 }>({
-  colorScheme: "light",
+  colorScheme: WebApp.colorScheme,
   theme: "apple",
 });
 
@@ -24,14 +24,12 @@ export const AppearanceProvider: FC<{
   children?: ReactNode;
   theme?: Themes;
   colorScheme?: ColorSchemes;
-  WebApp: WebApp;
 }> = ({
   children,
   theme = navigator.userAgent.match(/iOS|iPhone OS|iPhone|iPod|iPad|Mac OS/i)
     ? "apple"
     : "material",
   colorScheme: colorSchemeProp,
-  WebApp,
 }) => {
   const [colorScheme, setColorScheme] = useState<"light" | "dark">(
     colorSchemeProp || WebApp.colorScheme

@@ -1,4 +1,3 @@
-import WebApp from "@twa-dev/sdk";
 import { AppearanceProvider } from "../src";
 
 export const parameters = {
@@ -61,7 +60,7 @@ export const argTypes = {
 const withThemeProvider = (Story, context) => {
   const { theme, colorScheme } = context.globals;
   return (
-    <AppearanceProvider WebApp={WebApp} theme={theme} colorScheme={colorScheme}>
+    <AppearanceProvider theme={theme} colorScheme={colorScheme}>
       <Story {...context} />
     </AppearanceProvider>
   );
