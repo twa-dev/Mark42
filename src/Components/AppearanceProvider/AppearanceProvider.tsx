@@ -40,9 +40,17 @@ export const AppearanceProvider: FC<{
   }, [theme]);
 
   useEffect(() => {
-    WebApp.onEvent("themeChanged", () => {
-      !colorSchemeProp && setColorScheme(WebApp.colorScheme);
-    });
+    if (!colorSchemeProp) {
+      const onChange = () => {
+        setColorScheme(WebApp.colorScheme);
+      };
+      WebApp.onEvent("themeChanged", onChange);
+      return () => {
+        WebApp.offEvent("themeChanged", onChange);
+      };
+    } else {
+      setColorScheme(colorSchemeProp);
+    }
   }, [colorSchemeProp]);
 
   useEffect(() => {
