@@ -2,6 +2,7 @@
 node_modules/
 storybook-static/
 src/
+docs/
 tsconfig.json
 linaria.config.js
 .eslintrc
