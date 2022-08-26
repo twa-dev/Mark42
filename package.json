@@ -67,6 +67,7 @@
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.9"
+    "@babel/runtime": "^7.18.9",
+    "classnames": "^2.3.1"
   }
 }
