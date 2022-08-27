@@ -5,26 +5,24 @@ import { useTheme } from "../../hooks/useTheme";
 import { AppearanceProps } from "../../types";
 import WebApp from "@twa-dev/sdk";
 
-const styles = {
-  root: css`
-    input {
-      display: none;
-    }
-  `,
-  label: css`
+const mark = css`
+  position: relative;
+
+  &::after {
     display: block;
-  `,
-  mark: css`
-    position: relative;
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+  }
+`;
 
-    &::after {
-      display: block;
-      position: absolute;
-      content: "";
-      border-radius: 50%;
-    }
+const root = css`
+  input {
+    display: none;
+  }
 
-    &__apple {
+  &[data-theme="apple"] {
+    .${mark} {
       width: 51px;
       height: 31px;
       border-radius: 25.5px;
@@ -40,17 +38,19 @@ const styles = {
         background: #fff;
         transition: transform 0.2s ease;
       }
-
-      input:checked ~ & {
-        background: #34c759;
-
-        &::after {
-          transform: translateX(20px);
-        }
-      }
     }
 
-    &__material {
+    input:checked ~ .${mark} {
+      background: #34c759;
+
+      &::after {
+        transform: translateX(20px);
+      }
+    }
+  }
+
+  &[data-theme="material"] {
+    .${mark} {
       width: 32px;
       height: 14px;
       border-radius: 7px;
@@ -66,20 +66,24 @@ const styles = {
         background: #fff;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
+    }
 
-      input:checked ~ & {
-        background: #5aa7ea;
+    input:checked ~ .${mark} {
+      background: #5aa7ea;
 
-        &::after {
-          box-shadow: 0 0 0 2px #5aa7ea;
-          transform: translateX(16px);
-        }
+      &::after {
+        box-shadow: 0 0 0 2px #5aa7ea;
+        transform: translateX(16px);
       }
     }
-  `,
-};
+  }
+`;
 
-interface SwitchProps
+const label = css`
+  display: block;
+`;
+
+export interface SwitchProps
   extends InputHTMLAttributes<HTMLInputElement>,
     AppearanceProps {}
 
@@ -93,12 +97,14 @@ export const Switch: FC<SwitchProps> = memo<SwitchProps>(
     };
 
     return (
-      <div className={classNames(className, styles.root)} style={style}>
-        <label className={styles.label}>
+      <div
+        className={classNames(className, root)}
+        data-theme={theme}
+        style={style}
+      >
+        <label className={label}>
           <input type="checkbox" onChange={onChangeCallback} {...restProps} />
-          <div
-            className={classNames(styles.mark, `${styles.mark}__${theme}`)}
-          />
+          <div className={mark} />
         </label>
       </div>
     );

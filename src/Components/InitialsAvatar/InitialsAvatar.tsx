@@ -14,12 +14,12 @@ const styles = {
     font-size: var(--font-size);
     line-height: var(--font-size);
 
-    &__apple {
+    &[data-theme="apple"] {
       font-family: "ui-rounded", sans-serif;
       font-weight: 700;
     }
 
-    &__material {
+    &[data-theme="material"] {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
     }
@@ -65,11 +65,8 @@ export const InitialsAvatar: FC<InitialsAvatarProps> =
       return (
         <div
           {...restProps}
-          className={classNames(
-            styles.root,
-            `${styles.root}__${theme}`,
-            className
-          )}
+          className={classNames(className, styles.root)}
+          data-theme={theme}
           style={
             {
               ...style,
