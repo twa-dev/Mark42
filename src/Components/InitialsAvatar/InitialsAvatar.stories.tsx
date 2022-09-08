@@ -2,10 +2,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { InitialsAvatar as Component } from "./InitialsAvatar";
 
 export default {
-  title: "Components/InitialsAvatar",
+  title: "UI/InitialsAvatar",
   component: Component,
   parameters: {
     layout: "centered",
+    viewMode: "story",
   },
 } as ComponentMeta<typeof Component>;
 
@@ -14,8 +15,8 @@ export const InitialsAvatar: ComponentStory<typeof Component> = (props) => {
 };
 
 InitialsAvatar.args = {
-  userName: "Artur Stambultsian",
-  userId: 1,
+  entityName: "Artur Stambultsian",
+  entityId: 1,
   size: 200,
 };
 

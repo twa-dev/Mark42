@@ -1,37 +1,16 @@
-import { CSSProperties, FC, HTMLAttributes, memo } from "react";
+import { cx } from "@linaria/core";
+import { CSSProperties, FC, memo } from "react";
 import { useTheme } from "../../hooks/useTheme";
-import { css } from "@linaria/core";
-import { AppearanceProps } from "../../types";
+import { AppearanceProps, BaseComponentProps } from "../../types";
 import classNames from "classnames";
-
-const styles = {
-  root: css`
-    border-radius: 50%;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size);
-    line-height: var(--font-size);
-
-    &[data-theme="apple"] {
-      font-family: "ui-rounded", sans-serif;
-      font-weight: 700;
-    }
-
-    &[data-theme="material"] {
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-    }
-  `,
-};
+import styles from "./InitialsAvatar.styles";
 
 export interface InitialsAvatarProps
-  extends HTMLAttributes<HTMLElement>,
+  extends BaseComponentProps,
     AppearanceProps {
   size?: number;
-  userName: string;
-  userId: number;
+  entityName: string;
+  entityId: number;
 }
 
 const bgColors = [
@@ -48,8 +27,8 @@ export const InitialsAvatar: FC<InitialsAvatarProps> =
   memo<InitialsAvatarProps>(
     ({
       size = 40,
-      userId,
-      userName,
+      entityId,
+      entityName,
       theme,
       className,
       style,
@@ -57,16 +36,15 @@ export const InitialsAvatar: FC<InitialsAvatarProps> =
     }) => {
       theme = useTheme(theme);
 
-      const bgIndex = userId % 7;
+      const bgIndex = entityId % 7;
 
       const [color, topColor, bottomColor] = bgColors[bgIndex];
-      const [firstName = "", lastName = ""] = userName.split(" ");
+      const [firstName = "", lastName = ""] = entityName.split(" ");
 
       return (
         <div
           {...restProps}
-          className={classNames(className, styles.root)}
-          data-theme={theme}
+          className={cx(className, styles.root, styles[theme])}
           style={
             {
               ...style,
