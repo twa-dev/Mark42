@@ -9,6 +9,5 @@
     }],
     "@linaria"
   ],
-  "ignore": ["**/*.stories.tsx"],
   "plugins": ["@babel/plugin-transform-runtime"]
 }
