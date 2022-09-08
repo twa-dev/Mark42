@@ -62,7 +62,7 @@
   },
   "scripts": {
     "test": "eslint --ext .ts,.tsx ./",
-    "build": "tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist src/**/*.tsx --modules=es2015",
+    "build": "tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static"
   },
