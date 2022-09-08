@@ -1,3 +1,7 @@
+import { globalStyles } from "./globalStyles";
+
+document.body.classList.add(globalStyles);
+
 export { InitialsAvatar } from "./Components/InitialsAvatar";
 export { Switch } from "./Components/Switch";
 

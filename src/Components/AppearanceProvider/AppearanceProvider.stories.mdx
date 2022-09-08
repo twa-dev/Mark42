@@ -1,0 +1,51 @@
+import {Meta} from '@storybook/addon-docs/blocks';
+import { mdxMetaParams } from '../../../.storybook/utils';
+
+<Meta title="Service/AppearanceProvider" parameters={mdxMetaParams} />
+
+# AppearanceProvider
+This component is useful when you want to subscribe on appearance updates:
+
+```tsx
+import { AppearanceProvider, Section } from "@twa-dev/mark42";
+
+<AppearanceProvider>
+  <Section title="Title">Content</Section>
+</AppearanceProvider>
+```
+
+Now `Section` will change its style if `colorScheme` updates. That's because `AppearanceProvider` subscribes on
+[TWA SDK events](https://core.telegram.org/bots/webapps#events-available-for-web-apps) (like `themeChanged`) and passes
+actual value down using [React context](https://reactjs.org/docs/context.html). Each component in UI section reads these
+values.
+
+## Forcing appearance settings
+You can pass your own appearance settings via props:
+
+```tsx
+import { AppearanceProvider, Section } from "@twa-dev/mark42";
+
+<AppearanceProvider theme="material" colorScheme="light">
+  <Section title="Title">Content</Section>
+</AppearanceProvider>
+```
+
+Now `AppearanceProvider` understands that you to control its behaviour, therefor it won't react on TWA SDK updates.
+
+## Getting appearance properties in your own code
+You can get actual appearance values via hooks:
+
+```tsx
+import { useColorScheme, useTheme, AppearanceProvider } from "@twa-dev/mark42";
+
+const MyButton = (props) => {
+  const theme = useTheme();
+  const colorScheme = useColorScheme();
+
+  return <button {...props} />
+}
+
+<AppearanceProvider>
+  <MyButton>click me</MyButton>
+</AppearanceProvider>
+```

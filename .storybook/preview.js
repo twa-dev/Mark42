@@ -1,7 +1,18 @@
 import { AppearanceProvider } from "../src";
+import { useEffect, useState } from "react";
+import { tgThemeParamsMock } from "./tgThemeParamsMock";
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { globalStyles } from "../src/globalStyles";
+
+document.body.classList.add(globalStyles);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
+  options: {
+    storySort: {
+      order: ["Introduction", "UI", "Service"],
+    },
+  },
   backgrounds: {
     disable: true,
     grid: {
@@ -13,6 +24,11 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+    sort: "alpha",
+  },
+  viewport: {
+    viewports: MINIMAL_VIEWPORTS,
+    defaultViewport: "mobile1",
   },
 };
 
@@ -59,8 +75,17 @@ export const argTypes = {
 
 const withThemeProvider = (Story, context) => {
   const { theme, colorScheme } = context.globals;
+  const [themeState, setThemeState] = useState(theme);
+
+  useEffect(() => {
+    window.Telegram.WebView.receiveEvent("theme_changed", {
+      theme_params: tgThemeParamsMock[theme][colorScheme],
+    });
+    setThemeState(theme);
+  }, [colorScheme, theme]);
+
   return (
-    <AppearanceProvider theme={theme} colorScheme={colorScheme}>
+    <AppearanceProvider theme={themeState}>
       <Story {...context} />
     </AppearanceProvider>
   );

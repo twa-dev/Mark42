@@ -36,7 +36,7 @@ export const AppearanceProvider: FC<{
   );
 
   useEffect(() => {
-    document.body.classList.add(theme);
+    document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
   useEffect(() => {
