@@ -2,10 +2,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Switch as Component } from "./Switch";
 
 export default {
-  title: "Components/Switch",
+  title: "UI/Switch",
   component: Component,
   parameters: {
     layout: "centered",
+    viewMode: "story",
   },
 } as ComponentMeta<typeof Component>;
 
