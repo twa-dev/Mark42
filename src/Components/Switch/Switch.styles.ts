@@ -38,34 +38,33 @@ const mark = css`
       transform: translateX(20px);
     }
   }
-}
 
-.${material} & {
-  width: 32px;
-  height: 14px;
-  border-radius: 7px;
-  background: var(--mk42-separator-color);
-  transition: background-color 0.2s ease;
+  .${material} & {
+    width: 32px;
+    height: 14px;
+    border-radius: 7px;
+    background: var(--mk42-separator-color);
+    transition: background-color 0.2s ease;
 
-  &::after {
-    width: 16px;
-    height: 16px;
-    top: -1px;
-    left: 0;
-    box-shadow: 0 0 0 2px var(--mk42-separator-color);
-    background: var(--tg-theme-bg-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    &::after {
+      width: 16px;
+      height: 16px;
+      top: -1px;
+      left: 0;
+      box-shadow: 0 0 0 2px var(--mk42-separator-color);
+      background: var(--tg-theme-bg-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
   }
-}
 
-.${material} input:checked ~ & {
-  background: var(--tg-theme-button-color);
+  .${material} input:checked ~ & {
+    background: var(--tg-theme-button-color);
 
-  &::after {
-    box-shadow: 0 0 0 2px var(--tg-theme-button-color);
-    transform: translateX(16px);
+    &::after {
+      box-shadow: 0 0 0 2px var(--tg-theme-button-color);
+      transform: translateX(16px);
+    }
   }
-}
 `;
 
 const root = css`
