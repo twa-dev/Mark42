@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "homepage": "https://twa-dev.github.io/mark42",
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "index.js"
   ],
   "keywords": [
     "@twa-dev",
