@@ -1,7 +1,14 @@
 import { Meta } from '@storybook/addon-docs';
-import { mdxMetaParams } from '../.storybook/utils';
+import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
-<Meta title="Introduction" parameters={mdxMetaParams} />
+<Meta title="Introduction" parameters={{
+    viewMode: "docs",
+    previewTabs: { canvas: { hidden: true } },
+    viewport: {
+        viewports: MINIMAL_VIEWPORTS,
+        defaultViewport: "desktop",
+    },
+}} />
 
 # Mark42
 Mark42 is a simple lightweight tree-shakable UI library for [Telegram Web Apps (TWA)](https://core.telegram.org/bots/webapps).
