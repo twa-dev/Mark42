@@ -1,4 +1,4 @@
-import { cx } from "@linaria/core";
+import cx from "classnames";
 import { AppearanceProps, BaseComponentProps } from "../../types";
 import { FC, ReactNode } from "react";
 import { useTheme } from "../../hooks/useTheme";

@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { AppearanceProps, BaseComponentProps } from "../../types";
 import { useTheme } from "../../hooks/useTheme";
-import { cx } from "@linaria/core";
+import cx from "classnames";
 import styles from "./Section.styles";
 
 export interface SectionProps extends AppearanceProps, BaseComponentProps {

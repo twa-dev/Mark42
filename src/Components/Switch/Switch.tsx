@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, InputHTMLAttributes, memo } from "react";
-import { cx } from "@linaria/core";
+import cx from "classnames";
 import { useTheme } from "../../hooks/useTheme";
 import { AppearanceProps, BaseComponentProps } from "../../types";
 import WebApp from "@twa-dev/sdk";
