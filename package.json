@@ -1,6 +1,6 @@
 {
   "name": "@twa-dev/mark42",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "dist/index.js",
   "homepage": "https://twa-dev.github.io/mark42",
   "sideEffects": [
@@ -79,6 +79,6 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "classnames": "^2.3.1",
-    "@twa-dev/sdk": "^0.0.8"
+    "@twa-dev/sdk": "^0.0.9"
   }
 }
