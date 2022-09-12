@@ -80,6 +80,6 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "classnames": "^2.3.1",
-    "@twa-dev/sdk": "^0.0.3"
+    "@twa-dev/sdk": "^0.0.4"
   }
 }
