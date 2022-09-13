@@ -2,7 +2,6 @@ import cx from "classnames";
 import { CSSProperties, FC, memo } from "react";
 import { useTheme } from "../../hooks/useTheme";
 import { AppearanceProps, BaseComponentProps } from "../../types";
-import classNames from "classnames";
 import styles from "./InitialsAvatar.styles";
 
 export interface InitialsAvatarProps
