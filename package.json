@@ -72,9 +72,7 @@
     "build": "rm -rf dist && tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static && rm -rf storybook-static",
-    "release:patch": "yarn build && yarn release - --patch --tag --commit --push --public",
-    "release:minor": "yarn build && yarn release - --minor --tag --commit --push --public",
-    "release:major": "yarn build && yarn release - --major --tag --commit --push --public"
+    "deploy": "yarn lint:ts && yarn lint:css && yarn build && yarn release - --tag --commit --push --public"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
