@@ -11,7 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof Component>;
 
-export const Cell: ComponentStory<typeof Component> = (props) => {
+export const Cell: ComponentStory<typeof Component> = () => {
   return (
     <>
       <Component
