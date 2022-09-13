@@ -2685,10 +2685,10 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@twa-dev/sdk@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.10.tgz#835bff02c0ed2cc57c5ce8f0bb1f1da86afa6e0e"
-  integrity sha512-xsM5QsN2+g7ZhJ2EqaxHngNaREuRUn52VVxSO3JrRJKm4X/axZZBVuE980eZhjuD4COw4EqLaBPm+tkDX0NcpA==
+"@twa-dev/sdk@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.11.tgz#df65c0ecb493eb247783d72881e9a36ac1b30fb1"
+  integrity sha512-omwR0cV7qqX8YB+sfZcJYIDBSo1/L5bOkptPiwmG8a1V7IQNOhL6gN0i5gD3ykxY9k5pbe5/8qKjr3fBm2L0AQ==
   dependencies:
     "@twa-dev/types" "^6.2.4"
 
