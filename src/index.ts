@@ -15,3 +15,4 @@ export {
 
 export { useTheme } from "./hooks/useTheme";
 export { useColorScheme } from "./hooks/useColorScheme";
+export { usePlatform } from "./hooks/usePlatform";

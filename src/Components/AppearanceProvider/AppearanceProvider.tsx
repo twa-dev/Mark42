@@ -7,41 +7,50 @@ import {
   useState,
 } from "react";
 import WebApp from "@twa-dev/sdk";
+import { Platforms } from "@twa-dev/types";
 import { ColorSchemes, Themes } from "../../types";
 
-let theme: Themes;
-
-if (WebApp.platform) {
-  theme = WebApp.platform === 'macos' || WebApp.platform === 'ios' ? 'apple' : 'material';
-} else if (navigator.userAgent.match(/iOS|iPhone OS|iPhone|iPod|iPad|Mac OS/i)) {
-  theme = 'apple';
-} else {
-  theme = 'material';
+function resolveThemeByPlatform(platform: Platforms): Themes {
+  if (platform) {
+    return platform === "macos" || platform === "ios" ? "apple" : "material";
+  } else if (
+    navigator.userAgent.match(/iOS|iPhone OS|iPhone|iPod|iPad|Mac OS/i)
+  ) {
+    return "apple";
+  } else {
+    return "material";
+  }
 }
 
 export const AppearanceContext = createContext<{
-  theme: Themes;
   colorScheme: ColorSchemes;
+  theme: Themes;
+  platform: Platforms;
 }>({
   colorScheme: WebApp.colorScheme,
-  theme,
+  theme: resolveThemeByPlatform(WebApp.platform),
+  platform: WebApp.platform,
 });
 
 export const AppearanceProvider: FC<{
   children?: ReactNode;
   theme?: Themes;
+  platform?: Platforms;
   colorScheme?: ColorSchemes;
 }> = ({
   children,
-  theme: themeProp = theme,
-  colorScheme: colorSchemeProp= WebApp.colorScheme,
+  theme: themeProp,
+  platform: platformProp = WebApp.platform,
+  colorScheme: colorSchemeProp = WebApp.colorScheme,
 }) => {
-  const [colorScheme, setColorScheme] = useState<ColorSchemes>(
-    colorSchemeProp
-  );
+  const [colorScheme, setColorScheme] = useState<ColorSchemes>(colorSchemeProp);
+
+  const theme = useMemo(() => {
+    return themeProp || resolveThemeByPlatform(platformProp);
+  }, [themeProp, platformProp]);
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", themeProp);
+    document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
   useEffect(() => {
@@ -64,10 +73,11 @@ export const AppearanceProvider: FC<{
 
   const value = useMemo(() => {
     return {
-      theme: themeProp,
+      platform: platformProp,
+      theme,
       colorScheme,
     };
-  }, [colorScheme, themeProp]);
+  }, [colorScheme, themeProp, platformProp]);
 
   return (
     <AppearanceContext.Provider value={value}>
