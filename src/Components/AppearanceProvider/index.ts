@@ -1,1 +1,1 @@
-export { AppearanceProvider } from "./AppearanceProvider";
+export { AppearanceProvider, AppearanceContext } from "./AppearanceProvider";

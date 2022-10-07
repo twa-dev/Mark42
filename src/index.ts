@@ -8,7 +8,10 @@ export { Section } from "./Components/Section";
 export { Page } from "./Components/Page";
 export { Cell } from "./Components/Cell";
 
-export { AppearanceProvider } from "./Components/AppearanceProvider";
+export {
+  AppearanceProvider,
+  AppearanceContext,
+} from "./Components/AppearanceProvider";
 
 export { useTheme } from "./hooks/useTheme";
 export { useColorScheme } from "./hooks/useColorScheme";
