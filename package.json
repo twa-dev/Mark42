@@ -41,16 +41,22 @@
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.10",
     "@stylelint/postcss-css-in-js": "^0.38.0",
+    "@testing-library/react": "^13.4.0",
     "@types/babel__core": "^7.1.19",
-    "@types/react": "^18.0.17",
+    "@types/jest": "^29.1.2",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
+    "babel-jest": "^29.1.2",
     "babel-loader": "^8.2.5",
     "browserslist": "^4.21.3",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
     "gh-pages": "^4.0.0",
+    "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
     "postcss": "^8.4.16",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.7.1",
@@ -69,6 +75,7 @@
   "scripts": {
     "lint:ts": "eslint --ext .ts,.tsx ./",
     "lint:css": "stylelint \"src/**/*.styles.ts\"",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "build": "rm -rf dist && tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
     "storybook": "start-storybook -p 6006",
     "deploy-storybook": "build-storybook && gh-pages -d storybook-static && rm -rf storybook-static",
@@ -76,7 +83,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "classnames": "^2.3.1",
-    "@twa-dev/sdk": "^0.0.11"
+    "@twa-dev/sdk": "^0.0.12",
+    "classnames": "^2.3.1"
   }
 }
