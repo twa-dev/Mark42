@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Merge Request checks
 run-name: ${{ github.actor }} is testing his merge request 🚀
 on:
   pull_request:
