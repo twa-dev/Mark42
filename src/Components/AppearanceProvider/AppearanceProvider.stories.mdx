@@ -11,7 +11,7 @@ import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 }} />
 
 # AppearanceProvider
-This component is useful when you want to subscribe on appearance updates:
+This component is useful if you want to subscribe on appearance updates:
 
 ```tsx
 import { AppearanceProvider, Section } from "@twa-dev/mark42";
@@ -21,38 +21,57 @@ import { AppearanceProvider, Section } from "@twa-dev/mark42";
 </AppearanceProvider>
 ```
 
-Now `Section` will change its style if `colorScheme` updates. That's because `AppearanceProvider` subscribes on
-[TWA SDK events](https://core.telegram.org/bots/webapps#events-available-for-web-apps) (like `themeChanged`) and passes
-actual value down using [React context](https://reactjs.org/docs/context.html). Each component in UI section reads these
-values.
+`Section` will change its style if `colorScheme` updates. That's because `AppearanceProvider` subscribes on
+[TWA SDK `themeChanged` event](https://core.telegram.org/bots/webapps#events-available-for-web-apps) and passes
+actual value down using [React context](https://reactjs.org/docs/context.html).
 
-## Forcing appearance settings
-You can pass your own appearance settings via props:
+Almost every component in the UI section depends on the properties that `AppearanceProvider` provides.
 
-```tsx
-import { AppearanceProvider, Section } from "@twa-dev/mark42";
+## Properties
+There are several properties that `AppearanceProvider` passes through the application.
 
-<AppearanceProvider theme="material" colorScheme="light">
-  <Section title="Title">Content</Section>
-</AppearanceProvider>
-```
+#### `colorScheme`
+This prop shares information about scheme of Telegram client. Value can be `light` or `dark`.
 
-Now `AppearanceProvider` understands that you to control its behaviour, therefor it won't react on TWA SDK updates.
+#### `platform`
+There are lots of different Telegram clients: MacOS, Desktop, iOS, Android, web/z/ and so on. You probably want to
+create different UX depending on platform. All platforms are described in `Platforms` type in
+[@twa-dev/types](https://github.com/twa-dev/types) package.
+
+#### `theme`
+This property calculates from the `platform`. We believe that all platforms split into two groups: `apple` and
+`material`. You can use this prop if you have the same feelings.
+
+Now `AppearanceProvider` understands that you want to control its behavior, therefore it won't react to TWA SDK updates.
 
 ## Getting appearance properties in your own code
 You can get actual appearance values via hooks:
 
 ```tsx
-import { useColorScheme, useTheme, AppearanceProvider } from "@twa-dev/mark42";
+import { useColorScheme, useTheme, usePlatform, AppearanceProvider } from "@twa-dev/mark42";
 
 const MyButton = (props) => {
   const theme = useTheme();
   const colorScheme = useColorScheme();
+  const platform = usePlatform();
 
   return <button {...props} />
 }
 
 <AppearanceProvider>
   <MyButton>click me</MyButton>
+</AppearanceProvider>
+```
+
+## Forcing appearance settings
+You can pass your own appearance settings via props.
+
+*We don't recommend to use this approach in production, because `theme`, `colorScheme` and `platform` should be calculated automatically.*
+
+```tsx
+import { AppearanceProvider, Section } from "@twa-dev/mark42";
+
+<AppearanceProvider theme="material" colorScheme="light">
+  <Section title="Title">Content</Section>
 </AppearanceProvider>
 ```
