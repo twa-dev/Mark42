@@ -40,14 +40,18 @@ export const AppearanceProvider: FC<{
 }> = ({
   children,
   theme: themeProp,
-  platform: platformProp = WebApp.platform,
-  colorScheme: colorSchemeProp = WebApp.colorScheme,
+  platform: platformProp,
+  colorScheme: colorSchemeProp,
 }) => {
-  const [colorScheme, setColorScheme] = useState<ColorSchemes>(colorSchemeProp);
+  const [colorScheme, setColorScheme] = useState<ColorSchemes>(
+    colorSchemeProp || WebApp.colorScheme
+  );
+
+  const platform = platformProp || WebApp.platform;
 
   const theme = useMemo(() => {
-    return themeProp || resolveThemeByPlatform(platformProp);
-  }, [themeProp, platformProp]);
+    return themeProp || resolveThemeByPlatform(platform);
+  }, [themeProp, platform]);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -73,11 +77,11 @@ export const AppearanceProvider: FC<{
 
   const value = useMemo(() => {
     return {
-      platform: platformProp,
+      platform,
       theme,
       colorScheme,
     };
-  }, [colorScheme, themeProp, platformProp]);
+  }, [colorScheme, theme, platform]);
 
   return (
     <AppearanceContext.Provider value={value}>
