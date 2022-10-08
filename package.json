@@ -76,11 +76,11 @@
     "lint:es": "eslint --ext .ts,.tsx,.js ./",
     "lint:css": "stylelint \"src/**/*.styles.ts\"",
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
-    "build": "rm -rf dist && tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static && rm -rf storybook-static",
-    "deploy": "yarn release - --tag --commit --push --public"
+    "start": "start-storybook -p 6006",
+    "build:package": "rm -rf dist && tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
+    "deploy:package": "yarn release - --tag --commit --push --public",
+    "build:storybook": "build-storybook",
+    "deploy:storybook": "gh-pages -d storybook-static && rm -rf storybook-static"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
