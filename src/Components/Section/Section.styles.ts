@@ -27,7 +27,7 @@ const header = css`
 `;
 
 const container = css`
-  .${material} {
+  .${material} & {
     background: var(--tg-theme-bg-color);
   }
 `;
