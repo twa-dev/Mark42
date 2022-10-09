@@ -78,7 +78,7 @@
     "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
     "start": "start-storybook -p 6006",
     "build:package": "rm -rf dist && tsc --outDir dist && babel src --out-dir dist --extensions .tsx,.ts && linaria -o dist --source-root src --insert-css-requires dist \"src/**/*.ts\" --modules=es2015",
-    "deploy:package": "yarn release - --tag --commit --push --public",
+    "deploy:package": "yarn release - --tag --commit --push --public --silent",
     "build:storybook": "build-storybook",
     "deploy:storybook": "gh-pages -d storybook-static && rm -rf storybook-static"
   },
