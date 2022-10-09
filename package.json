@@ -1,6 +1,6 @@
 {
   "name": "@twa-dev/mark42",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "main": "dist/index.js",
   "homepage": "https://twa-dev.github.io/mark42",
   "sideEffects": [
