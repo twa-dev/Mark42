@@ -3,6 +3,15 @@ import { css } from "@linaria/core";
 const apple = css``;
 const material = css``;
 
+const root = css`
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+`;
+
 const mark = css`
   position: relative;
 
@@ -64,12 +73,6 @@ const mark = css`
       box-shadow: 0 0 0 2px var(--tg-theme-button-color);
       transform: translateX(16px);
     }
-  }
-`;
-
-const root = css`
-  input {
-    display: none;
   }
 `;
 
