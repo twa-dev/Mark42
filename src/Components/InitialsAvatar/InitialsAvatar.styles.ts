@@ -10,13 +10,11 @@ const material = css`
 `;
 
 const root = css`
-  border-radius: 50%;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size);
-  line-height: var(--font-size);
+  line-height: 1;
 `;
 
 export default { root, apple, material };

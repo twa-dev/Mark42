@@ -1,13 +1,10 @@
 import cx from "classnames";
-import { CSSProperties, FC, memo } from "react";
+import { FC, memo } from "react";
 import { useTheme } from "../../hooks/useTheme";
-import { AppearanceProps, BaseComponentProps } from "../../types";
 import styles from "./InitialsAvatar.styles";
+import { Avatar, AvatarProps } from "../Avatar";
 
-export interface InitialsAvatarProps
-  extends BaseComponentProps,
-    AppearanceProps {
-  size?: number;
+export interface InitialsAvatarProps extends AvatarProps {
   entityName: string;
   entityId: number;
 }
@@ -41,27 +38,24 @@ export const InitialsAvatar: FC<InitialsAvatarProps> =
       const [firstName = "", lastName = ""] = entityName.split(" ");
 
       return (
-        <div
+        <Avatar
           {...restProps}
+          size={size}
           className={cx(className, styles.root, styles[theme])}
-          style={
-            {
-              ...style,
-              width: size,
-              height: size,
-              background:
-                theme === "apple"
-                  ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
-                  : color,
-              "--font-size": `${Math.round(size / 2.2)}px`,
-            } as CSSProperties
-          }
+          style={{
+            ...style,
+            background:
+              theme === "apple"
+                ? `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
+                : color,
+            fontSize: Math.round(size / 2.2),
+          }}
         >
           <div>
             {firstName && firstName.charAt(0).toUpperCase()}
             {lastName && lastName.charAt(0).toUpperCase()}
           </div>
-        </div>
+        </Avatar>
       );
     }
   );

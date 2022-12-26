@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppearanceContext } from "../Components/AppearanceProvider/AppearanceProvider";
+import { AppearanceContext } from "../Components/AppearanceProvider";
 import { Themes } from "../types";
 
 export function useTheme(forceTheme?: Themes): Themes {
