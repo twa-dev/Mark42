@@ -1,5 +1,5 @@
 import { css } from "@linaria/core";
-import initialsAvatar from "../InitialsAvatar/InitialsAvatar.styles";
+import avatarStyles from "../Avatar/Avatar.styles";
 
 const apple = css`
   padding-inline-start: 16px;
@@ -14,7 +14,7 @@ const material = css`
 const before = css`
   flex-shrink: 0;
 
-  .${initialsAvatar.root} {
+  .${avatarStyles.root} {
     margin: 10px 0;
     margin-inline-end: 10px;
   }
