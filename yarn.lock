@@ -3019,17 +3019,17 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@twa-dev/sdk@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.12.tgz#c3b753889fcedcc0c7cd416c821a507458ebe59e"
-  integrity sha512-DEMFvN4AyYzowoYGqgAGxwG9Z0E8z9zL/PU82hqiUkHP6Tp06RA45BESZkO3FIDKJcuDajXayES3oLibl/HcVQ==
+"@twa-dev/sdk@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.13.tgz#cd8b4ad0db4e9d95a46011eeb95386462b2d55dc"
+  integrity sha512-94sJUT12RhMjH0EIuygpM2ltF1tQJe1+F3ZYIbEg2Y5Wqrr2imQwZAO2PHrCFs6hcOfi/6MvPSpkCusc3kK9zA==
   dependencies:
-    "@twa-dev/types" "^6.2.4"
+    "@twa-dev/types" "^6.4.0"
 
-"@twa-dev/types@^6.2.4":
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/@twa-dev/types/-/types-6.2.4.tgz#860b2e297c1df75e857a5f6a23d98a3850c3d4c6"
-  integrity sha512-CEO+xdrMm6PkkGkthTWaVqmjtFafDBkCTIjsS/1YrEiKn90Hh6KoWKeDK3gikYANTrCrrGaJh5uaKVWR5yjPHQ==
+"@twa-dev/types@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@twa-dev/types/-/types-6.4.0.tgz#71503d1d9ea375d18fcfe388b3915a9e122b8805"
+  integrity sha512-zYLvE9mfS5jBZrz76UQiEgJMrrBB6PvTdBkP4bqP/Pm/SScpKt+XKTj3GJHU3oqXlEF/4gVsreIqfl821KG+ow==
 
 "@types/aria-query@^4.2.0":
   version "4.2.2"
