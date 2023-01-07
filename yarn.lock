@@ -3019,10 +3019,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@twa-dev/sdk@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.13.tgz#cd8b4ad0db4e9d95a46011eeb95386462b2d55dc"
-  integrity sha512-94sJUT12RhMjH0EIuygpM2ltF1tQJe1+F3ZYIbEg2Y5Wqrr2imQwZAO2PHrCFs6hcOfi/6MvPSpkCusc3kK9zA==
+"@twa-dev/sdk@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@twa-dev/sdk/-/sdk-0.0.14.tgz#6b7b5c7b09b6b06b6a51fe2e9a887b283cf2815a"
+  integrity sha512-Wo3KoKRkgC2zcUo05iqP+3ohlXEK+gSr9GDc1amyFiESLnD8u6PxvULisI49RCuEDkr9I9nBVknbNvsX4rJnkg==
   dependencies:
     "@twa-dev/types" "^6.4.0"
 
