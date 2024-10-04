@@ -1,0 +1,20 @@
+@import '~mixins';
+
+.sentinel {
+  max-height: 0;
+}
+
+@include orientation(portrait) {
+  .sentinel {
+    max-height: none;
+  }
+
+  .root {
+    position: fixed;
+    top: var(--tg-viewport-height);
+    inset-inline-start: 0;
+    width: 100%;
+    transition: top 0.25s ease-in-out;
+    transform: translateY(-100%);
+  }
+}

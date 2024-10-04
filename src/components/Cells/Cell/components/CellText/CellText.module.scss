@@ -1,0 +1,93 @@
+@import '~mixins';
+
+.root {
+  display: flex;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: var(--cell-text-inline-spacing);
+
+  &.inverted {
+    flex-direction: column-reverse;
+  }
+
+  &.start {
+    align-items: flex-start;
+  }
+
+  &.end {
+    align-items: flex-end;
+  }
+
+  &.stretch {
+    align-items: stretch;
+  }
+
+  &.center {
+    align-items: center;
+  }
+
+  &__apple {
+    min-height: 44px;
+    padding-block: 10px;
+
+    &.doubledecker {
+      min-height: 60px;
+      padding-block: 8px;
+    }
+  }
+
+  &__material {
+    min-height: 50px;
+    padding-block: 12px;
+    gap: 2px;
+
+    &.doubledecker {
+      min-height: 64px;
+      padding-block: 10px;
+    }
+  }
+}
+
+.title {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+}
+
+.multilineTitle {
+  span {
+    white-space: pre-line;
+    overflow: visible;
+  }
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+.description {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.multilineDescription {
+  overflow: visible;
+  white-space: pre-line;
+}
+
+.action {
+  padding-block-start: 8px;
+}

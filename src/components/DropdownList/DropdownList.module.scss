@@ -1,0 +1,76 @@
+@import '~mixins';
+
+.optionContainer {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--tg-theme-text-color);
+  border: none;
+
+  &__apple {
+    height: 44px;
+
+    &::after {
+      @include separator;
+    }
+  }
+
+  &__material {
+    height: 48px;
+  }
+}
+
+.popover {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--quick-menu-background);
+
+  &__apple {
+    --border-radius: 13px;
+
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 48px rgb(0 0 0 / 20%);
+    backdrop-filter: blur(100px);
+  }
+
+  &__material {
+    --border-radius: 6px;
+
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px 0.5px rgb(0 0 0 / 12%);
+  }
+
+  & .optionContainer:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+
+  & .optionContainer:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  & .optionContainer:last-child::after {
+    display: none;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__apple {
+    padding-block: 0;
+    padding-inline: 16px;
+
+    @include font-serif('-apple-system', 17px, false, normal, 22px, 400);
+  }
+
+  &__material {
+    padding-block: 0;
+    padding-inline: 16px;
+
+    @include font-serif('Roboto', 16px, false, normal, 20px, 400);
+  }
+}

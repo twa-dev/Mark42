@@ -1,0 +1,13 @@
+@import '~mixins';
+
+.root {
+  @include skeleton;
+}
+
+.shapeCircle {
+  border-radius: 50%;
+}
+
+.shapeRounded {
+  border-radius: 8px;
+}

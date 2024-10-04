@@ -1,0 +1,58 @@
+@import '~mixins';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.media {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__apple {
+    margin-bottom: 10px;
+  }
+
+  &__material {
+    margin-bottom: 8px;
+  }
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.text {
+  text-align: center;
+  white-space: pre-line;
+
+  &__apple {
+    margin-block: 8px 0;
+    margin-inline: 0;
+  }
+
+  &__material {
+    margin-block: 12px 0;
+    margin-inline: 0;
+  }
+}
+
+.description {
+  text-align: center;
+  white-space: pre-line;
+  margin-block: 4px 0;
+  margin-inline: 0;
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 28px;
+}

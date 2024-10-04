@@ -1,0 +1,67 @@
+.root {
+  position: relative;
+}
+
+.input {
+  font: inherit;
+  line-height: inherit;
+  border-radius: 12px;
+  background: var(--input-bg-color);
+  color: var(--tg-theme-text-color);
+  border: none;
+  outline: none;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--tg-theme-subtitle-text-color);
+  }
+}
+
+.empty .clearButtonIcon {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition:
+    height 0ms 200ms,
+    opacity 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.text {
+  .input {
+    padding-block: 12px;
+    padding-inline: 16px;
+
+    &[type='password'] {
+      padding-inline-end: 36px;
+    }
+  }
+}
+
+.search {
+  .input {
+    padding-inline-start: 42px;
+    padding-block: 10px;
+  }
+
+  .icon {
+    top: 10px;
+  }
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  color: var(--tg-theme-subtitle-text-color);
+  top: 12px;
+}
+
+.searchIcon {
+  inset-inline-start: 12px;
+}
+
+.clearButtonIcon {
+  opacity: 1;
+  inset-inline-end: 12px;
+  height: 22px;
+  transition: opacity 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}

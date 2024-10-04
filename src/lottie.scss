@@ -1,0 +1,59 @@
+/* stylelint-disable */
+
+:global(.wallet-lottie_fill_bg-color) path {
+  fill: var(--tg-theme-bg-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_button-color) path {
+  fill: var(--tg-theme-button-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_button-text-color) path {
+  fill: var(--tg-theme-button-text-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_hint-color) path {
+  fill: var(--tg-theme-subtitle-text-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_text-color) path {
+  fill: var(--tg-theme-text-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_link-color) path {
+  fill: var(--tg-theme-link-color);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_fill_quaternary-fill-background) path {
+  fill: var(--quaternary-fill-background);
+  fill-opacity: 1;
+}
+:global(.wallet-lottie_stroke_bg-color) path {
+  stroke: var(--tg-theme-bg-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_button-color) path {
+  stroke: var(--tg-theme-button-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_button-text-color) path {
+  stroke: var(--tg-theme-button-text-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_hint-color) path {
+  stroke: var(--tg-theme-subtitle-text-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_text-color) path {
+  stroke: var(--tg-theme-text-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_link-color) path {
+  stroke: var(--tg-theme-link-color);
+  stroke-opacity: 1;
+}
+:global(.wallet-lottie_stroke_quaternary-fill-background) path {
+  stroke: var(--quaternary-fill-background);
+  stroke-opacity: 1;
+}
+/* stylelint-enable */

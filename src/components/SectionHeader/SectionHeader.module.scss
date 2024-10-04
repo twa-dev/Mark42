@@ -1,0 +1,12 @@
+@import '~mixins';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.action {
+  cursor: pointer;
+}

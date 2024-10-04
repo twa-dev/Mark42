@@ -1,0 +1,67 @@
+@import '~mixins';
+
+.tabs {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.tappable {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-block: 0;
+  padding-inline: 16px;
+}
+
+.tappableContainer {
+  height: 100%;
+}
+
+.tab {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include font-serif(
+    'Roboto',
+    16px,
+    var(--tg-theme-subtitle-text-color),
+    normal,
+    20px,
+    500
+  );
+}
+
+.activeTab {
+  position: relative;
+  color: var(--tg-theme-accent-text-color);
+}
+
+.activeIndicator {
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  height: 3px;
+  width: 0;
+  background-color: var(--tg-theme-accent-text-color);
+  border-radius: 2px 2px 0 0;
+}
+
+.activeIndicatorMounted {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dot {
+  color: var(--tg-theme-accent-text-color);
+  font-weight: 600;
+}
+
+.disabled {
+  opacity: 0.5;
+}

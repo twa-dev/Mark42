@@ -1,0 +1,99 @@
+@import '~mixins';
+
+.root {
+  --animation-duration: 0.25s;
+
+  input {
+    height: 0;
+    width: 0;
+    display: none;
+
+    &:disabled + .presentation {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  .presentation {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    transition: background-color var(--animation-duration);
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      transform: translateX(0);
+      transition:
+        transform var(--animation-duration),
+        border-color var(--animation-duration);
+    }
+
+    &__apple {
+      width: 51px;
+      height: 31px;
+      border-radius: 16px;
+      background-color: var(--tg-theme-secondary-bg-color);
+
+      &::after {
+        top: 2px;
+        inset-inline-start: 2px;
+        width: 27px;
+        height: 27px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+      }
+    }
+
+    &__material {
+      width: 32px;
+      height: 14px;
+      border-radius: 7px;
+      background-color: var(--separator-color);
+
+      &::after {
+        top: -3px;
+        inset-inline-start: -2px;
+        width: 16px;
+        height: 16px;
+        background: var(--tg-theme-bg-color);
+        box-sizing: content-box;
+        border: 2px solid var(--separator-color);
+      }
+    }
+  }
+
+  &__apple {
+    input:checked + .presentation {
+      background-color: var(--text-confirm-color);
+
+      &::after {
+        transform: translateX(20px);
+      }
+    }
+  }
+
+  &__material {
+    input:checked + .presentation {
+      background-color: var(--tg-theme-button-color);
+
+      &::after {
+        transform: translateX(16px);
+        border-color: var(--tg-theme-button-color);
+      }
+    }
+  }
+}
+
+@include rtl {
+  .root {
+    &__apple input:checked + .presentation::after {
+      transform: translateX(-20px);
+    }
+
+    &__material input:checked + .presentation::after {
+      transform: translateX(-16px);
+    }
+  }
+}

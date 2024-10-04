@@ -1,0 +1,53 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  white-space: pre-line;
+
+  &__apple {
+    padding-inline: 32px;
+  }
+
+  &__material {
+    padding-inline: 24px;
+  }
+}
+
+.media {
+  &__apple {
+    width: 112px;
+    height: 112px;
+  }
+
+  &__material {
+    width: 100px;
+    height: 100px;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.title {
+  strong {
+    color: var(--tg-theme-accent-text-color);
+    font-weight: inherit;
+    font-style: inherit;
+  }
+}
+
+.media + .title {
+  margin-top: 20px;
+}
+
+.title + .text {
+  margin-top: 12px;
+}
+
+.text + .description {
+  margin-top: 12px;
+}

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  height: 6px;
+}
+
+.progress {
+  background-color: var(--tg-theme-accent-text-color);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.minProgressPrettyValue {
+  min-width: 6px;
+}
+
+.skeleton {
+  background-color: var(--tertiary-fill-background);
+}
+
+.placeholder {
+  background-color: var(--tertiary-fill-background);
+  border-radius: 4px;
+  width: 100%;
+}

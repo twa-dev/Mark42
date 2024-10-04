@@ -1,9 +1,38 @@
-import { useContext } from "react";
-import { AppearanceContext } from "../Components/AppearanceProvider";
-import { Themes } from "../types";
+import { useContext } from 'react';
+import classNames from 'classnames';
 
-export function useTheme(forceTheme?: Themes): Themes {
+import { AppearanceContext } from 'AppearanceProvider';
+
+export function useTheme(): 'apple' | 'material';
+export function useTheme<S extends Record<string, string>>(
+  styles: S,
+): {
+  theme: 'apple' | 'material';
+  themeClassName: (className: keyof S) => string;
+};
+
+export function useTheme<S extends Record<string, string>>(
+  styles?: S,
+):
+  | 'apple'
+  | 'material'
+  | {
+      theme: 'apple' | 'material';
+      themeClassName: (className: keyof S) => string;
+    } {
   const { theme } = useContext(AppearanceContext);
 
-  return forceTheme || theme;
+  if (!styles) {
+    return theme;
+  }
+
+  return {
+    theme,
+    themeClassName: function (className: keyof S) {
+      return classNames(
+        styles[className],
+        styles[`${className as string}__${theme}`],
+      );
+    },
+  };
 }

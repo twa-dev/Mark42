@@ -1,0 +1,9 @@
+.root {
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.loaded {
+  opacity: 1;
+}

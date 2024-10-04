@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+  opacity: 0;
+}
+
+.ready {
+  opacity: 1;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-x;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.freeze {
+  .slides {
+    overflow: hidden;
+  }
+}
+
+.slide {
+  flex-shrink: 0;
+  flex-grow: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}

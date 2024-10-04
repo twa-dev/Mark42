@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  align-items: center;
+
+  & > :not(:last-child) {
+    margin-inline-end: calc(-1 * var(--overlap-width));
+    z-index: 1;
+  }
+}

@@ -1,0 +1,127 @@
+@import '~mixins';
+
+.tappable {
+  display: block;
+}
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.separator .container {
+  --cell-separator-height: 1px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 100%;
+  min-width: 0;
+  position: relative;
+  margin-inline-start: 16px;
+
+  &__apple {
+    margin-inline-start: 16px;
+  }
+
+  &__material {
+    margin-inline-start: 20px;
+  }
+
+  &::after {
+    @include separator(bottom, var(--cell-separator-height));
+  }
+
+  &::before {
+    @include separator(top, var(--cell-block-separator-height));
+  }
+}
+
+.onlyChildren {
+  &__apple {
+    padding-inline-end: 16px;
+  }
+
+  &__material {
+    padding-inline-end: 20px;
+  }
+}
+
+.start + .container {
+  margin-inline-start: 0;
+}
+
+.start {
+  flex-shrink: 0;
+
+  &__apple {
+    --cell-avatar-inline-spacing: 16px 10px;
+    --cell-text-inline-spacing: 16px 10px;
+    --cell-checkbox-inline-spacing: 16px 10px;
+    --cell-icon-inline-spacing: 22px 16px;
+    --cell-square-icon-inline-spacing: 16px 20px;
+  }
+
+  &__material {
+    --cell-avatar-inline-spacing: 14px 11px;
+    --cell-text-inline-spacing: 20px 11px;
+    --cell-radio-inline-spacing: 24px 16px;
+    --cell-checkbox-inline-spacing: 28px 25px;
+    --cell-icon-inline-spacing: 21px 16px;
+    --cell-square-icon-inline-spacing: 20px 16px;
+  }
+}
+
+.end {
+  flex-shrink: 0;
+
+  &__apple:last-child {
+    --cell-avatar-inline-spacing: 10px 16px;
+    --cell-text-inline-spacing: 10px 16px;
+    --cell-radio-inline-spacing: 12px;
+    --cell-segmented-control-inline-spacing: 0 16px;
+    --cell-checkbox-inline-spacing: 16px;
+    --cell-icon-inline-spacing: 16px 16px;
+    --cell-picker-inline-spacing: 16px 16px;
+  }
+
+  &__material:last-child {
+    --cell-avatar-inline-spacing: 11px 14px;
+    --cell-text-inline-spacing: 11px 20px;
+    --cell-radio-inline-spacing: 20px;
+    --cell-checkbox-inline-spacing: 28px 25px;
+    --cell-icon-inline-spacing: 16px 20px;
+    --cell-picker-inline-spacing: 16px 20px;
+
+    // TODO: make it right after we moved completely to the new Cells
+    --cell-tabs-inline-spacing: 0;
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+
+  &__apple {
+    color: var(--separator-color);
+    margin-inline: 10px 16px;
+  }
+
+  &__material {
+    opacity: 0.5;
+    color: var(--tg-theme-subtitle-text-color);
+    margin-inline: 11px 14px;
+  }
+}
+
+@include rtl {
+  .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.disabled {
+  opacity: 0.4;
+}

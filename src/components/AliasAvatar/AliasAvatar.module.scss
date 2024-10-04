@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.img {
+  width: 70%;
+  height: 70%;
+}
+
+.loading {
+  background-color: var(--quaternary-fill-background);
+}

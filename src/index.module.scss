@@ -1,0 +1,132 @@
+@import '~mixins';
+@import 'lottie';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--tg-theme-text-color);
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-x: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  // fallbacks for sdk versions < 6.9
+  --tg-theme-section-bg-color: var(--tg-theme-bg-color);
+  --tg-theme-subtitle-text-color: var(--tg-theme-hint-color);
+  --tg-theme-section-header-text-color: var(--tg-theme-link-color);
+  --tg-theme-accent-text-color: var(--tg-theme-link-color);
+  --tg-theme-destructive-text-color: #f16d66;
+
+  // fallbacks for wallet palette
+  --separator-color: #c8c7cb;
+  --second-button-color: rgba(0 122 255 / 10%);
+  --text-confirm-color: #34c759;
+  --button-confirm-color: #34c759;
+  --button-main-disabled-color: #e8e8e9;
+  --text-main-disabled-color: #bababa;
+  --button-destructive-color: rgba(255 59 48 / 10%);
+  --highlight-default: rgba(142 142 146 / 24%);
+  --quick-menu-background: rgba(255 255 255 / 55%);
+  --quick-menu-foreground: rgba(0 0 0 / 10%);
+  --toast-background: rgba(45 45 45 / 80%);
+  --text-overlay: #fff;
+  --toast-link: #5ac8fa;
+  --tertiary-fill-background: rgba(116 116 128 / 12%);
+  --quaternary-fill-background: rgba(116 116 128 / 8%);
+  --separator-non-opaque-color: rgba(60 60 67 / 36%);
+  --accent-orange: #ff9500;
+  --accent-brown: #ac8e68;
+  --segmented-control-active-background: #fff;
+  --tooltip-background: rgba(0 0 0 / 80%);
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+  margin: 0;
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+html[lang='fa'],
+html[lang='ar'] {
+  direction: rtl;
+}
+
+a {
+  color: var(--tg-theme-link-color);
+  text-decoration: none;
+}
+
+svg {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+input,
+textarea,
+[contenteditable] {
+  user-select: initial;
+  caret-color: var(--tg-theme-accent-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+:global(.container) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 0;
+  padding-inline: 16px;
+  min-height: var(--tg-viewport-stable-height);
+}
+
+@include orientation(portrait) {
+  :global(.container) {
+    width: 100%;
+    position: fixed;
+    inset-inline-start: 0;
+    top: 0;
+    height: var(--tg-viewport-stable-height);
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}

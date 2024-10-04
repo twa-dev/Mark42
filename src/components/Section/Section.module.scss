@@ -1,0 +1,100 @@
+@import '~mixins';
+
+.root {
+  &__material {
+    &.inner .separator {
+      box-shadow: 0 1px 2px rgb(0 0 0 / 8%) inset;
+    }
+
+    &.outer .container {
+      box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
+    }
+
+    &.inner {
+      background: var(--tg-theme-section-bg-color);
+    }
+  }
+}
+
+.content {
+  &__apple {
+    padding-inline: 16px;
+  }
+}
+
+.container {
+  isolation: isolate;
+
+  &__apple {
+    border-radius: 10px;
+    overflow: hidden;
+
+    &.secondary {
+      background: var(--tg-theme-secondary-bg-color);
+    }
+
+    &.primary {
+      background: var(--tg-theme-section-bg-color);
+    }
+
+    &.quaternary {
+      background: var(--quaternary-fill-background);
+    }
+
+    &.skeleton {
+      background: var(--quaternary-fill-background);
+    }
+  }
+
+  &__material {
+    background: var(--tg-theme-section-bg-color);
+  }
+}
+
+.title {
+  &__apple {
+    padding-block: 30px 4px;
+    padding-inline: 16px;
+  }
+
+  &__material {
+    padding-block: 20px 4px;
+    padding-inline: 20px;
+    background: var(--tg-theme-section-bg-color);
+  }
+
+  &.condensed {
+    &__apple {
+      padding-block: 4px;
+    }
+  }
+}
+
+.separator {
+  margin: 0;
+  border: 0;
+
+  &__apple {
+    height: 24px;
+  }
+
+  &__material {
+    height: 12px;
+    background: var(
+      --tg-theme-secondary-bg-color,
+      var(--secondary-bg-color-fallback)
+    );
+  }
+}
+
+.description {
+  &__apple {
+    padding-block: 6px;
+    padding-inline: 16px;
+  }
+
+  &__material {
+    padding-block: 12px;
+    padding-inline: 20px;
+  }
+}

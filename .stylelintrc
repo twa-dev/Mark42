@@ -1,7 +1,6 @@
 {
-  "extends": ["stylelint-config-recommended", "@linaria/stylelint", "stylelint-config-prettier"],
+  "extends": ["stylelint-config-recommended", "stylelint-config-prettier"],
   "rules": {
     "no-empty-source": null
-  },
-  "customSyntax": "@stylelint/postcss-css-in-js"
+  }
 }

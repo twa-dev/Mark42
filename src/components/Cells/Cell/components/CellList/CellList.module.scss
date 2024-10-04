@@ -1,0 +1,67 @@
+@import '~mixins';
+
+.root.separator > * {
+  --cell-separator-height: 1px;
+
+  &:last-child {
+    --cell-separator-height: 0;
+  }
+}
+
+.root.blockSeparatorTop > *:first-child {
+  --cell-block-separator-height: 1px;
+}
+
+.root {
+  &__apple {
+    &.overlap > * {
+      margin-block: 11px;
+    }
+
+    &.overlap > :first-child {
+      margin-block-start: 0;
+      padding-block-start: 11px;
+    }
+
+    &.overlap > :last-child {
+      margin-block-end: 0;
+      padding-block-end: 11px;
+    }
+  }
+
+  &__material {
+    &.overlap > * {
+      margin-block: 15px;
+    }
+
+    &.overlap > :first-child {
+      margin-block-start: 0;
+      padding-block-start: 15px;
+    }
+
+    &.overlap > :last-child {
+      margin-block-end: 0;
+      padding-block-end: 15px;
+    }
+  }
+
+  &.overlap > * * {
+    padding-block: 0;
+    min-height: auto;
+    margin-block: 0 !important;
+  }
+}
+
+.card {
+  overflow: hidden;
+  background-color: var(--tg-theme-section-bg-color);
+
+  &__apple {
+    border-radius: 14px;
+  }
+
+  &__material {
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0 0 0 / 8%);
+  }
+}

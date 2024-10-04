@@ -1,0 +1,31 @@
+@import '~mixins';
+
+.root {
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__apple {
+    @include font-serif(
+      'ui-rounded',
+      var(--font_size),
+      false,
+      normal,
+      var(--font_size),
+      700
+    );
+  }
+
+  &__material {
+    @include font-serif(
+      'Roboto',
+      var(--font_size),
+      false,
+      normal,
+      var(--font_size),
+      500
+    );
+  }
+}

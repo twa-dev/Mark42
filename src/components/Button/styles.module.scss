@@ -1,0 +1,111 @@
+@import '~mixins';
+
+.root {
+  user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &.shiny::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: slide 1.4s infinite;
+    background: linear-gradient(
+      90deg,
+      rgba(255 255 255 / 0%) 0%,
+      rgba(255 255 255 / 85%) 19.79%,
+      #fff 26.04%,
+      rgba(255 255 255 / 85%) 32.29%,
+      rgba(255 255 255 / 0%) 50%
+    );
+  }
+
+  &__apple {
+    mask-image: radial-gradient(
+      white,
+      black
+    ); // fix of old iOS bug https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
+
+    &.shiny::after {
+      mix-blend-mode: soft-light;
+    }
+
+    &.tapped {
+      opacity: 0.6;
+    }
+  }
+
+  &__material {
+    &.tapped .container::after {
+      background: var(--highlight-default);
+    }
+  }
+}
+
+.root[disabled] {
+  opacity: 0.4;
+}
+
+.text {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.primary {
+  background: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+
+.secondary {
+  background: var(--second-button-color);
+  color: var(--tg-theme-accent-text-color);
+}
+
+.destructive {
+  background: var(--button-destructive-color);
+  color: var(--tg-theme-destructive-text-color);
+}
+
+.tertiary {
+  color: var(--tg-theme-text-color);
+  background-color: var(--tertiary-fill-background);
+
+  .icon {
+    opacity: 0.8;
+  }
+}
+
+.overlay {
+  color: white;
+  background: linear-gradient(rgba(255 255 255 / 7%), rgba(255 255 255 / 7%)),
+    rgba(255 255 255 / 3%);
+  background-blend-mode: plus-lighter, normal;
+}
+
+.transparent {
+  background: transparent;
+  color: var(--tg-theme-accent-text-color);
+}
+
+.skeleton {
+  @include skeleton;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}

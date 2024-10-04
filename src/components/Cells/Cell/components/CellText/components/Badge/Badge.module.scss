@@ -1,0 +1,16 @@
+.root {
+  padding-inline: 4px;
+  padding-block: 2px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.accent {
+  background-color: var(--tg-theme-accent-text-color);
+  color: var(--tg-theme-button-text-color);
+}
+
+.quaternary {
+  background-color: var(--quaternary-fill-background);
+  color: var(--tg-theme-subtitle-text-color);
+}

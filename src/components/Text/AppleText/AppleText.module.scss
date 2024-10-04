@@ -1,0 +1,135 @@
+.root {
+  font-family: -apple-system, sans-serif;
+}
+
+.title1 {
+  --skeleton-height: 24px;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.title2 {
+  --skeleton-height: 22px;
+
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.title3 {
+  --skeleton-height: 18px;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.headline {
+  --skeleton-height: 14px;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.body {
+  --skeleton-height: 14px;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.callout {
+  --skeleton-height: 14px;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.subheadline1 {
+  --skeleton-height: 12px;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+
+  &.caps {
+    text-transform: uppercase;
+
+    &.compactLineHeight {
+      line-height: 1;
+    }
+  }
+}
+
+.subheadline2 {
+  --skeleton-height: 12px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+
+  &.rounded {
+    font-family: ui-rounded, sans-serif;
+  }
+}
+
+.footnote {
+  --skeleton-height: 12px;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+
+  &.caps {
+    text-transform: uppercase;
+
+    &.compactLineHeight {
+      line-height: 1;
+    }
+  }
+}
+
+.caption1 {
+  --skeleton-height: 10px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.caption2 {
+  --skeleton-height: 8px;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 510;
+}
+
+.semibold {
+  font-weight: 590;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.rounded {
+  font-family: ui-rounded, sans-serif;
+}
+
+.mono {
+  font-family: ui-monospace, monospace;
+}

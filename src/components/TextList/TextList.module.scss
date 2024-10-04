@@ -1,0 +1,43 @@
+.featuresList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  &__apple {
+    padding-block: 8px;
+    padding-inline: 16px;
+    line-height: 20px;
+  }
+
+  &__material {
+    padding-block: 8px;
+    padding-inline: 20px 16px;
+  }
+}
+
+.featureMarker {
+  padding-inline: 3px;
+
+  &__apple {
+    padding-block-start: 8px;
+  }
+
+  &__material {
+    padding-block-start: 6px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-list-bullet-color);
+  }
+}

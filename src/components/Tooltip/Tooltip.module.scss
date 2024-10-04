@@ -1,0 +1,17 @@
+.tooltip {
+  width: max-content;
+  background-color: var(--tooltip-background);
+  z-index: 10000;
+
+  &__apple {
+    border-radius: 10px;
+  }
+
+  &__material {
+    border-radius: 6px;
+  }
+}
+
+.arrow {
+  inset-inline: 0;
+}

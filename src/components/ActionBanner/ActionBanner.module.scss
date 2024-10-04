@@ -1,0 +1,26 @@
+.cellBanner:not(.withIcon) {
+  gap: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  & svg {
+    margin-block: -3px;
+    margin-inline: -2px; // removes margin inside svg, so that the icon itself could be correctly positioned by outer gaps and paddings
+  }
+}
+
+.subtitle {
+  & svg {
+    color: var(--tg-theme-subtitle-text-color);
+  }
+}
+
+.destructive {
+  & svg {
+    color: var(--tg-theme-destructive-text-color);
+  }
+}

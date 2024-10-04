@@ -1,0 +1,44 @@
+.overlay,
+.opacity {
+  user-select: none;
+}
+
+.overlay {
+  &.in {
+    background: var(--highlight-default);
+  }
+
+  &.out {
+    animation: overlay-out 0.4s ease forwards;
+  }
+}
+
+.opacity {
+  &.in {
+    opacity: 0.6;
+  }
+
+  &.out {
+    animation: opacity-out 0.4s ease forwards;
+  }
+}
+
+@keyframes overlay-out {
+  from {
+    background: var(--highlight-default);
+  }
+
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes opacity-out {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,42 @@
+.avatar,
+.roundedIcon,
+.smallButton,
+.doubleAvatars {
+  margin-inline: var(--cell-avatar-inline-spacing);
+}
+
+.checkbox {
+  margin-inline: var(--cell-checkbox-inline-spacing);
+}
+
+.radio {
+  margin-inline: var(--cell-radio-inline-spacing);
+}
+
+.switch {
+  margin-inline: var(--cell-text-inline-spacing);
+}
+
+.tabs {
+  margin-inline: var(--cell-tabs-inline-spacing);
+}
+
+.segmentedControl {
+  margin-inline: var(--cell-segmented-control-inline-spacing);
+}
+
+.picker {
+  margin-inline: var(--cell-picker-inline-spacing);
+}
+
+.icon {
+  margin-inline: var(--cell-icon-inline-spacing);
+}
+
+.squareIcon {
+  margin-inline: var(--cell-square-icon-inline-spacing);
+}
+
+.disabled {
+  opacity: 0.4;
+}

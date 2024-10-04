@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  &__apple {
+    gap: 4px;
+    padding-block: 16px 12px;
+  }
+
+  &__material {
+    gap: 6px;
+    padding-block: 16px;
+  }
+}

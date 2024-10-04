@@ -1,0 +1,19 @@
+.root {
+  &__apple {
+    padding-block: 3px 5px;
+    padding-inline: 10px;
+    border-radius: 6px;
+
+    &.rounded {
+      padding-block: 4px;
+      padding-inline: 12px;
+      border-radius: 30px;
+    }
+  }
+
+  &__material {
+    padding-block: 6px;
+    padding-inline: 12px;
+    border-radius: 6px;
+  }
+}

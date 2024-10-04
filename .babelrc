@@ -6,8 +6,7 @@
     "@babel/preset-typescript",
     ["@babel/preset-react", {
       "runtime": "automatic"
-    }],
-    "@linaria"
+    }]
   ],
   "plugins": ["@babel/plugin-transform-runtime"]
 }

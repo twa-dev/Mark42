@@ -9,7 +9,17 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "declaration": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "baseUrl": "src",
+    "incremental": true,
+    "skipLibCheck": true, // remove after eliminating floating-ui and react-transition-group packages
+    "paths": {
+      "components/*": ["components/*"],
+      "utils/*": ["utils/*"],
+      "styles/*": ["styles/*"],
+      "hooks/*": ["hooks/*"],
+      "images/*": ["images/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["**/*.stories.tsx"]

@@ -1,0 +1,111 @@
+@mixin skeleton() {
+  background: var(--quaternary-fill-background);
+}
+
+@mixin rtl {
+  [lang='fa'],
+  [lang='ar'] {
+    @content;
+  }
+}
+
+@mixin orientation($value) {
+  @if $value == portrait {
+    @media (max-aspect-ratio: 10 / 7) {
+      @content;
+    }
+  } @else {
+    @media (min-aspect-ratio: 10 / 7.1) {
+      @content;
+    }
+  }
+}
+
+@mixin font-serif(
+  $name,
+  $size: false,
+  $color: false,
+  $fontStyle: false,
+  $lineHeight: false,
+  $weight: false
+) {
+  font-family: $name, system-ui, sans-serif;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $color {
+    color: $color;
+  }
+
+  @if $fontStyle {
+    font-style: $fontStyle;
+  }
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin separator($placement: bottom, $thikness: 1px) {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  width: 100%;
+  height: $thikness;
+  background: var(--separator-color);
+  transform-origin: bottom left;
+
+  @if $placement == top {
+    top: 0;
+    transform-origin: top left;
+  }
+
+  @if $placement == bottom {
+    bottom: 0;
+    transform-origin: bottom left;
+  }
+
+  @if $placement == end {
+    bottom: 0;
+    inset-inline: initial 0;
+    width: $thikness;
+    height: 100%;
+    transform-origin: initial;
+  }
+
+  @if $placement == bottom or $placement == top {
+    @media (min-resolution: 2dppx) {
+      transform: scaleY(0.5);
+    }
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleY(0.33);
+    }
+  }
+
+  @if $placement == end {
+    @media (min-resolution: 2dppx) {
+      transform: scaleX(0.5);
+    }
+
+    @media (min-resolution: 3dppx) {
+      transform: scaleX(0.33);
+    }
+  }
+}
+
+@mixin hide-scroll-bar {
+  // hide scroll bar
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

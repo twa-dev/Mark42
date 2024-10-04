@@ -1,0 +1,81 @@
+.root {
+  &__apple {
+    border-radius: 10px;
+  }
+
+  &__material {
+    border-radius: 8px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__apple {
+    height: 50px;
+  }
+
+  &__material {
+    height: 48px;
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  padding-inline-start: 24px;
+  box-sizing: content-box;
+
+  svg {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  &__apple {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__material {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.text {
+  &__apple {
+    padding-inline: 28px;
+  }
+
+  &__material {
+    padding-inline: 30px;
+  }
+}
+
+.icon + .text {
+  padding-inline-start: 6px;
+}
+
+.stretched {
+  width: 100%;
+  display: block;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  width: 28px;
+  height: 28px;
+
+  &__apple {
+    inset-inline-end: 13px;
+  }
+
+  &__material {
+    inset-inline-end: 12px;
+  }
+}

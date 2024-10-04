@@ -1,0 +1,103 @@
+@import '~mixins';
+
+.root {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  background: rgb(118 118 128 / 12%);
+  overflow: hidden;
+  height: 34px;
+  width: 100%;
+
+  &__apple {
+    border-radius: 9px;
+  }
+
+  &__material {
+    border-radius: 18px;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.item {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  color: var(--tg-theme-text-color);
+
+  &__apple {
+    @include font-serif('-apple-system', 13px, false, normal, 18px, 400);
+  }
+
+  &__material {
+    @include font-serif('Roboto', 12px, false, normal, 18px, 500);
+  }
+}
+
+.selectedItem {
+  &__apple {
+    font-weight: 500;
+  }
+
+  &__material {
+    font-weight: 600;
+  }
+}
+
+.itemContent {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.invisibleItemContent {
+  position: relative;
+  visibility: hidden;
+
+  &__apple {
+    @include font-serif('-apple-system', 13px, false, normal, 18px, 500);
+  }
+
+  &__material {
+    @include font-serif('Roboto', 15px, false, normal, 16px, 600);
+  }
+}
+
+.dot {
+  color: var(--tg-theme-accent-text-color);
+  font-weight: 600;
+}
+
+.selectedItemBackground {
+  position: absolute;
+  inset: 2px;
+  height: 30px;
+  background: var(--segmented-control-active-background);
+  border: 0.5px solid rgb(0 0 0 / 4%);
+  will-change: transform;
+  transition: transform 0.2s;
+
+  &__apple {
+    box-shadow:
+      0 3px 8px rgb(0 0 0 / 12%),
+      0 3px 1px rgb(0 0 0 / 4%);
+    border-radius: 7px;
+  }
+
+  &__material {
+    border-radius: 16px;
+  }
+}

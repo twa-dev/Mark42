@@ -1,0 +1,117 @@
+@import '~mixins';
+
+.optionContainer {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: var(--tg-theme-text-color);
+  border: none;
+
+  &__apple {
+    height: 44px;
+
+    &::after {
+      @include separator;
+    }
+  }
+
+  &__material {
+    height: 48px;
+  }
+
+  &.muted {
+    mask-image: linear-gradient(to right, rgb(0 0 0 / 40%), rgb(0 0 0 / 40%));
+  }
+}
+
+.popover {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--quick-menu-background);
+  transform: scale(0);
+  opacity: 0;
+
+  &__apple {
+    --border-radius: 13px;
+
+    min-width: 106px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 48px rgb(0 0 0 / 20%);
+    backdrop-filter: blur(100px);
+  }
+
+  &__material {
+    --border-radius: 6px;
+
+    min-width: 106px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px 0.5px rgb(0 0 0 / 12%);
+  }
+
+  & .optionContainer:first-child {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+
+  & .optionContainer:last-child {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  & .optionContainer:last-child::after {
+    display: none;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+
+  &__apple {
+    padding-block: 0;
+    padding-inline: 13px 16px;
+
+    @include font-serif('-apple-system', 17px, false, normal, 22px, 400);
+  }
+
+  &__material {
+    padding-block: 0;
+    padding-inline: 13px 16px;
+
+    @include font-serif('Roboto', 16px, false, normal, 20px, 400);
+  }
+}
+
+.check {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &__apple {
+    margin-inline-end: 8px;
+
+    path {
+      fill: var(--tg-theme-text-color);
+    }
+  }
+
+  &__material {
+    margin-inline-end: 12px;
+
+    path {
+      stroke: var(--tg-theme-accent-text-color);
+    }
+  }
+}
+
+.label {
+  /* ! */
+
+  &__apple {
+    margin-inline-start: 20px;
+  }
+
+  &__material {
+    margin-inline-start: 26px;
+  }
+}

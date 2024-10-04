@@ -1,0 +1,61 @@
+.root {
+  path[fill='rgb(0,122,255)'] {
+    fill: var(--tg-theme-button-color);
+  }
+
+  path[stroke='rgb(0,122,255)'] {
+    stroke: var(--tg-theme-button-color);
+  }
+
+  path[fill='rgb(90,167,233)'] {
+    fill: var(--tg-theme-button-color);
+  }
+
+  path[stroke='rgb(90,167,233)'] {
+    stroke: var(--tg-theme-button-color);
+  }
+
+  path[stroke='rgb(200,199,203)'] {
+    stroke: var(--tg-theme-hint-text-color);
+  }
+
+  path[fill='rgb(217,217,217)'] {
+    fill: var(--tg-theme-hint-text-color);
+  }
+
+  &__apple {
+    color: var(--separator-color);
+
+    &.radio {
+      width: 30px;
+      height: 30px;
+    }
+
+    &.checkbox {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__material {
+    color: var(--tg-theme-hint-color);
+
+    &.radio {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.checkbox {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &.checked {
+    color: var(--tg-theme-button-color);
+
+    path {
+      fill: var(--tg-theme-button-color);
+    }
+  }
+}
