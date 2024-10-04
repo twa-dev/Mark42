@@ -98,34 +98,6 @@ p {
   padding: 0;
 }
 
-:global(.container) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-block: 0;
-  padding-inline: 16px;
-  min-height: var(--tg-viewport-stable-height);
-}
-
-@include orientation(portrait) {
-  :global(.container) {
-    width: 100%;
-    position: fixed;
-    inset-inline-start: 0;
-    top: 0;
-    height: var(--tg-viewport-stable-height);
-    transition: 0.25s ease-in-out;
-    overflow: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none; /* Firefox */
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none;
