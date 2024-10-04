@@ -40,7 +40,7 @@ export const Page = ({
     try {
       // TODO: make fixes to avoid type assertion
       setBackgroundColor(
-        backgroundColor as `#${string}` | "bg_color" | "secondary_bg_color"
+        backgroundColor as `#${string}` | "bg_color" | "secondary_bg_color",
       );
       if (isVersionAtLeast("6.9")) {
         // TODO: make fixes to avoid type assertion
@@ -48,11 +48,11 @@ export const Page = ({
           (headerColor
             ? headerColor
             : theme === "material" || mode === "primary"
-            ? "bg_color"
-            : "secondary_bg_color") as
+              ? "bg_color"
+              : "secondary_bg_color") as
             | `#${string}`
             | "bg_color"
-            | "secondary_bg_color"
+            | "secondary_bg_color",
         );
       } else {
         // TODO: make fixes to avoid type assertion
@@ -60,7 +60,7 @@ export const Page = ({
           (theme === "material" ? themeParams.bg_color : backgroundColor) as
             | `#${string}`
             | "bg_color"
-            | "secondary_bg_color"
+            | "secondary_bg_color",
         );
       }
     } catch (e) {

@@ -1,4 +1,4 @@
-@import '~mixins';
+@import "~mixins";
 
 .optionContainer {
   padding: 0;
@@ -64,13 +64,13 @@
     padding-block: 0;
     padding-inline: 16px;
 
-    @include font-serif('-apple-system', 17px, false, normal, 22px, 400);
+    @include font-serif("-apple-system", 17px, false, normal, 22px, 400);
   }
 
   &__material {
     padding-block: 0;
     padding-inline: 16px;
 
-    @include font-serif('Roboto', 16px, false, normal, 20px, 400);
+    @include font-serif("Roboto", 16px, false, normal, 20px, 400);
   }
 }

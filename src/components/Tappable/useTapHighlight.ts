@@ -5,9 +5,9 @@ import {
   useEffect,
   useRef,
   useState,
-} from 'react';
+} from "react";
 
-import styles from './useTapHighlight.module.scss';
+import styles from "./useTapHighlight.module.scss";
 
 type Handlers =
   | {
@@ -23,12 +23,12 @@ type Handlers =
       onContextMenu: () => void;
     };
 
-export const supportsTouch = 'ontouchstart' in window;
+export const supportsTouch = "ontouchstart" in window;
 
 interface Options {
   onTap?: (data: { target: Element; clientX: number; clientY: number }) => void;
   onTapOut?: () => void;
-  mode?: 'overlay' | 'opacity';
+  mode?: "overlay" | "opacity";
   disabled?: boolean;
 }
 
@@ -37,7 +37,7 @@ interface Options {
 export function useTapHighlight({
   onTap,
   onTapOut,
-  mode = 'overlay',
+  mode = "overlay",
   disabled,
 }: Options = {}): [boolean, Handlers, string[]] {
   const commonStyle = styles[mode];
@@ -98,7 +98,7 @@ export function useTapHighlight({
         onPointerMove: (e: PointerEvent) => {
           if (
             tapped &&
-            e.pointerType === 'touch' &&
+            e.pointerType === "touch" &&
             (e.movementY !== 0 || e.movementX !== 0)
           ) {
             fadeOut();

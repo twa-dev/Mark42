@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from "react";
 
 type UseTimeout = () => [
   (cb: VoidFunction, time: number) => void,

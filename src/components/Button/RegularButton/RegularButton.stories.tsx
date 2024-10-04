@@ -1,14 +1,14 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { RegularButton } from './RegularButton';
+import { RegularButton } from "./RegularButton";
 
-import { ReactComponent as SendIconSVG } from 'images/send.svg';
+import { ReactComponent as SendIconSVG } from "images/send.svg";
 
 export default {
-  title: 'RegularButton',
+  title: "RegularButton",
   component: RegularButton,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof RegularButton>;
 
@@ -22,7 +22,7 @@ export const RegularButtonStory: StoryFn<typeof RegularButton> = ({
     <div
       style={{
         padding: 40,
-        background: props.appearance === 'overlay' ? '#000' : 'transparent',
+        background: props.appearance === "overlay" ? "#000" : "transparent",
       }}
     >
       <RegularButton {...props} icon={resolvedIcon} />
@@ -31,7 +31,7 @@ export const RegularButtonStory: StoryFn<typeof RegularButton> = ({
 };
 
 RegularButtonStory.args = {
-  children: 'Label',
+  children: "Label",
 };
 
-RegularButtonStory.storyName = 'RegularButton';
+RegularButtonStory.storyName = "RegularButton";

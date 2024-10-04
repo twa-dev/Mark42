@@ -1,7 +1,7 @@
-import { CSSProperties, ReactNode } from 'react';
-import classNames from 'classnames';
+import { CSSProperties, ReactNode } from "react";
+import classNames from "classnames";
 
-import styles from './ButtonGroup.module.scss';
+import styles from "./ButtonGroup.module.scss";
 
 export const ButtonGroup = ({
   children,

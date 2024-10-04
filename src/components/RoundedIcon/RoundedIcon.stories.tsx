@@ -1,14 +1,14 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { RoundedIcon } from './RoundedIcon';
+import { RoundedIcon } from "./RoundedIcon";
 
-import { ReactComponent as BuySVG } from 'images/buy.svg';
+import { ReactComponent as BuySVG } from "images/buy.svg";
 
 export default {
-  title: 'RoundedIcon',
+  title: "RoundedIcon",
   component: RoundedIcon,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof RoundedIcon>;
 
@@ -22,8 +22,8 @@ export const RoundedIconStory: StoryFn<typeof RoundedIcon> = (props) => {
 
 RoundedIconStory.args = {
   size: 40,
-  iconColor: '#fff',
-  backgroundColor: 'button',
+  iconColor: "#fff",
+  backgroundColor: "button",
 };
 
-RoundedIconStory.storyName = 'RoundedIcon';
+RoundedIconStory.storyName = "RoundedIcon";

@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { createPortal } from 'react-dom';
+import { ReactNode } from "react";
+import { createPortal } from "react-dom";
 
 function createWrapperAndAppendToBody(wrapperId: string) {
-  const wrapperElement = document.createElement('div');
-  wrapperElement.setAttribute('id', wrapperId);
+  const wrapperElement = document.createElement("div");
+  wrapperElement.setAttribute("id", wrapperId);
   document.body.appendChild(wrapperElement);
   return wrapperElement;
 }
@@ -15,7 +15,7 @@ type ReactPortalParams = {
 
 export function ReactPortal({
   children,
-  wrapperId = 'portal-wrapper',
+  wrapperId = "portal-wrapper",
 }: ReactPortalParams) {
   let element = document.getElementById(wrapperId) as HTMLElement;
   if (!element) {

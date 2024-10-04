@@ -95,7 +95,7 @@ function useTooltip({
       arrowRef,
       showArrow: arrow,
     }),
-    [open, setOpen, interactions, data, arrowRef, arrow]
+    [open, setOpen, interactions, data, arrowRef, arrow],
   );
 }
 
@@ -144,7 +144,7 @@ const TooltipTrigger = React.forwardRef<
         ...props,
         ...children.props,
         "data-state": state.open ? "open" : "closed",
-      } as React.HTMLProps<HTMLElement>)
+      } as React.HTMLProps<HTMLElement>),
     );
   }
 
@@ -189,7 +189,7 @@ const TooltipContent = React.forwardRef<
       initial: {
         opacity: 0,
       },
-    }
+    },
   );
 
   if (!isMounted) return null;

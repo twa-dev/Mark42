@@ -48,7 +48,7 @@ export type AppleVariantAttributes = {
 
 export function AppleText<
   C extends keyof JSX.IntrinsicElements,
-  V extends AppleVariants = AppleVariants
+  V extends AppleVariants = AppleVariants,
 >({
   Component,
   style,
@@ -83,9 +83,9 @@ export function AppleText<
         "rounded" in props && styles.rounded,
         "align" in props && tStyles[props.align as string],
         props.className,
-        compactLineHeight && styles.compactLineHeight
+        compactLineHeight && styles.compactLineHeight,
       ),
     },
-    skeleton ? <div className={tStyles.skeleton} /> : children
+    skeleton ? <div className={tStyles.skeleton} /> : children,
   );
 }

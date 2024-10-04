@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export const useDidUpdate = (cb: VoidFunction, deps: unknown[]) => {
   const mounted = useRef(false);

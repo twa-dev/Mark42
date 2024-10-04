@@ -62,7 +62,7 @@ export function createPalette({
         text_main_disabled_color: "#B9B9BA",
         button_destructive_color: opacifyHEXColor(
           tgTheme.destructive_text_color ?? destructiveColorFallback,
-          10
+          10,
         ),
         highlight_default: "rgba(142, 142, 146, 0.24)",
         quick_menu_background: "rgba(255, 255, 255, 0.55)",
@@ -88,7 +88,7 @@ export function createPalette({
         text_main_disabled_color: "#606060",
         button_destructive_color: opacifyHEXColor(
           tgTheme.destructive_text_color ?? destructiveColorFallback,
-          10
+          10,
         ),
         highlight_default: "rgba(152, 152, 157, 0.24)",
         quick_menu_background: "rgba(0, 0, 0, 0.78)",
@@ -116,7 +116,7 @@ export function createPalette({
         text_main_disabled_color: "#BABABA",
         button_destructive_color: opacifyHEXColor(
           tgTheme.destructive_text_color ?? destructiveColorFallback,
-          10
+          10,
         ),
         highlight_default: "rgba(0, 0, 0, 0.05)",
         quick_menu_background: "#FFFFFF",
@@ -142,7 +142,7 @@ export function createPalette({
         text_main_disabled_color: "#606060",
         button_destructive_color: opacifyHEXColor(
           tgTheme.destructive_text_color ?? destructiveColorFallback,
-          10
+          10,
         ),
         highlight_default: "rgba(255, 255, 255, 0.05)",
         quick_menu_background: "#282829",
@@ -163,7 +163,7 @@ export function createPalette({
   Object.entries(palette).forEach(([key, value]) => {
     document.documentElement.style.setProperty(
       `--${key.replaceAll("_", "-")}`,
-      value
+      value,
     );
   });
 

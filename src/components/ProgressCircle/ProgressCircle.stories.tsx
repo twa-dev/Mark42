@@ -1,12 +1,12 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { ProgressCircle } from './ProgressCircle';
+import { ProgressCircle } from "./ProgressCircle";
 
 export default {
-  title: 'ProgressCircle',
+  title: "ProgressCircle",
   component: ProgressCircle,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof ProgressCircle>;
 
@@ -19,4 +19,4 @@ Story.args = {
   size: 200,
 };
 
-Story.storyName = 'ProgressCircle';
+Story.storyName = "ProgressCircle";

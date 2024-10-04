@@ -6,7 +6,7 @@ export function setRef<T>(
     | undefined,
   value: T | null,
 ): void {
-  if (typeof ref === 'function') {
+  if (typeof ref === "function") {
     ref(value);
   } else if (ref) {
     ref.current = value;

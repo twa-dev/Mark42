@@ -1,4 +1,4 @@
-@import '~mixins';
+@import "~mixins";
 
 .tabs {
   height: 50px;
@@ -29,7 +29,7 @@
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @include font-serif(
-    'Roboto',
+    "Roboto",
     16px,
     var(--tg-theme-subtitle-text-color),
     normal,

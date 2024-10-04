@@ -1,14 +1,14 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { Placeholder } from './Placeholder';
+import { Placeholder } from "./Placeholder";
 
-import { ReactComponent as FolderSVG } from 'images/folder.svg';
+import { ReactComponent as FolderSVG } from "images/folder.svg";
 
 export default {
-  title: 'Placeholder',
+  title: "Placeholder",
   component: Placeholder,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof Placeholder>;
 
@@ -18,10 +18,10 @@ export const Story: StoryFn<typeof Placeholder> = (props) => {
 
 Story.args = {
   media: <FolderSVG />,
-  title: 'Beautiful title',
-  text: 'Amazing text',
-  description: 'Heartbreaking description',
-  bottom: 'Captivating bottom content',
+  title: "Beautiful title",
+  text: "Amazing text",
+  description: "Heartbreaking description",
+  bottom: "Captivating bottom content",
 };
 
-Story.storyName = 'Placeholder';
+Story.storyName = "Placeholder";

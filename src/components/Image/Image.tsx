@@ -1,7 +1,7 @@
-import { ImgHTMLAttributes, useState } from 'react';
-import classNames from 'classnames';
+import { ImgHTMLAttributes, useState } from "react";
+import classNames from "classnames";
 
-import styles from './Image.module.scss';
+import styles from "./Image.module.scss";
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement>;
 
@@ -15,8 +15,8 @@ const isInCache = ({ src, srcSet }: ImageProps): boolean => {
   const { complete } = img;
 
   // immediately set src/srcset to empty strings to avoid actually loading the image
-  img.src = '';
-  img.srcset = '';
+  img.src = "";
+  img.srcset = "";
 
   return complete;
 };

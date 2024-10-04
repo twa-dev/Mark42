@@ -1,20 +1,20 @@
-import { CSSProperties } from 'react';
-import classNames from 'classnames';
+import { CSSProperties } from "react";
+import classNames from "classnames";
 
-import styles from './PageControl.module.scss';
+import styles from "./PageControl.module.scss";
 
 export type TPageControl = {
   activeIndex?: number;
   count?: number;
   platter?: boolean;
-  type?: 'regular' | 'progress';
+  type?: "regular" | "progress";
   durationTime?: number;
 };
 
 export const PageControl: React.FC<TPageControl> = ({
   activeIndex,
   count = 0,
-  type = 'regular',
+  type = "regular",
   platter = false,
   durationTime = 2000,
 }) => {
@@ -25,7 +25,7 @@ export const PageControl: React.FC<TPageControl> = ({
           className={classNames(styles.dots, platter && styles.platter)}
           style={
             {
-              ['--page-control-duration-time']: `${durationTime + 1000}ms`,
+              ["--page-control-duration-time"]: `${durationTime + 1000}ms`,
             } as CSSProperties
           }
         >
@@ -35,7 +35,7 @@ export const PageControl: React.FC<TPageControl> = ({
                 key={index}
                 className={classNames(
                   styles.container,
-                  activeIndex === index && type === 'progress' && styles.active,
+                  activeIndex === index && type === "progress" && styles.active,
                 )}
               >
                 <div className={styles.back} />

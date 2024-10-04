@@ -1,9 +1,9 @@
-import { CSSProperties, ReactNode } from 'react';
-import classNames from 'classnames';
+import { CSSProperties, ReactNode } from "react";
+import classNames from "classnames";
 
-import { TelegramColorIds } from 'types/utility';
+import { TelegramColorIds } from "types/utility";
 
-import styles from './RoundedIcon.module.scss';
+import styles from "./RoundedIcon.module.scss";
 
 const ICON_SIZES_BY_AVATAR_SIZE: Record<number, number> = {
   24: 20,
@@ -14,7 +14,7 @@ const ICON_SIZES_BY_AVATAR_SIZE: Record<number, number> = {
 
 export const RoundedIcon = ({
   backgroundColor,
-  iconColor = '#fff',
+  iconColor = "#fff",
   iconOpacity = 1,
   size = 40,
   iconSize,

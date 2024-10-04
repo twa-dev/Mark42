@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
 
-import { TextField } from './TextField';
+import { TextField } from "./TextField";
 
 export default {
-  title: 'TextField',
+  title: "TextField",
   component: TextField,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
   argTypes: {
     multiline: {
-      control: 'boolean',
-      if: { arg: 'type', eq: 'text' },
+      control: "boolean",
+      if: { arg: "type", eq: "text" },
     },
     type: {
-      control: 'inline-radio',
-      options: ['text', 'search', 'password'],
+      control: "inline-radio",
+      options: ["text", "search", "password"],
     },
     material: {
-      control: 'object',
+      control: "object",
     },
     apple: {
-      control: 'object',
+      control: "object",
     },
   },
 } as Meta<typeof TextField>;
@@ -39,7 +39,7 @@ export const TextFieldStory: StoryFn<typeof TextField> = (props) => {
         {...props}
         apple={{
           ...props.apple,
-          onClear: () => setStateValue(''),
+          onClear: () => setStateValue(""),
         }}
         onChange={(value) => setStateValue(value)}
         value={stateValue}
@@ -49,18 +49,18 @@ export const TextFieldStory: StoryFn<typeof TextField> = (props) => {
 };
 
 TextFieldStory.args = {
-  label: 'Label',
-  value: '',
+  label: "Label",
+  value: "",
   multiline: false,
-  type: 'text',
+  type: "text",
   apple: {
-    onClear: () => console.log('clear'),
+    onClear: () => console.log("clear"),
   },
   material: {
-    variant: 'lined',
+    variant: "lined",
     error: false,
-    hint: '',
+    hint: "",
   },
 };
 
-TextFieldStory.storyName = 'TextField';
+TextFieldStory.storyName = "TextField";

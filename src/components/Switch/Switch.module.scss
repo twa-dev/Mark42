@@ -1,4 +1,4 @@
-@import '~mixins';
+@import "~mixins";
 
 .root {
   --animation-duration: 0.25s;
@@ -21,7 +21,7 @@
     transition: background-color var(--animation-duration);
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       border-radius: 50%;
       transform: translateX(0);

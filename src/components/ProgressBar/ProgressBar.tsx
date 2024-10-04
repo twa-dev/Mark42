@@ -1,7 +1,7 @@
-import cn from 'classnames';
-import { clamp } from 'lodash-es';
+import cn from "classnames";
+import { clamp } from "lodash-es";
 
-import styles from './ProgressBar.module.scss';
+import styles from "./ProgressBar.module.scss";
 
 interface ProgressBarProps {
   value: number;

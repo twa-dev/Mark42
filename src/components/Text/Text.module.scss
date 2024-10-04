@@ -69,11 +69,11 @@
 
   &::before {
     width: 0;
-    content: '\00a0';
+    content: "\00a0";
   }
 
   &::after {
-    content: '';
+    content: "";
     flex-grow: 1;
     height: var(--skeleton-height);
     background-color: var(--quaternary-fill-background);

@@ -3,8 +3,8 @@
 }
 
 @mixin rtl {
-  [lang='fa'],
-  [lang='ar'] {
+  [lang="fa"],
+  [lang="ar"] {
     @content;
   }
 }
@@ -53,7 +53,7 @@
 }
 
 @mixin separator($placement: bottom, $thikness: 1px) {
-  content: '';
+  content: "";
   position: absolute;
   inset-inline-start: 0;
   width: 100%;

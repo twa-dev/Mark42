@@ -1,24 +1,30 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from "@storybook/addon-docs";
 import { MINIMAL_VIEWPORTS } from "@storybook/addon-viewport";
 
-<Meta title="Introduction" parameters={{
+<Meta
+  title="Introduction"
+  parameters={{
     viewMode: "docs",
     previewTabs: { canvas: { hidden: true } },
     viewport: {
-        viewports: MINIMAL_VIEWPORTS,
-        defaultViewport: "desktop",
+      viewports: MINIMAL_VIEWPORTS,
+      defaultViewport: "desktop",
     },
-}} />
+  }}
+/>
 
 # Mark42
+
 Mark42 is a simple lightweight tree-shakable UI library for [Telegram Web Apps (TWA)](https://core.telegram.org/bots/webapps).
 
 ## Installation
+
 ```
 npm i @twa-dev/mark42
 ```
 
 ## Motivation
+
 Telegram supports different themes and color schemes.
 It can be dark or light. On MacOS, iOS and iPadOS messenger follows apple design guidelines,
 on other platforms (Desktop, Web, Android) it looks like a material interface.
@@ -28,8 +34,9 @@ Mark42 helps you with that. Each component supports different themes and color s
 Therefore, you can focus on logic of your application and Mark42 will make it fancy.
 
 ## Usage example
+
 ```tsx
-import { InitialsAvatar } from '@twa-dev/mark42';
+import { InitialsAvatar } from "@twa-dev/mark42";
 
 <InitialsAvatar
   userId={12345}
@@ -37,5 +44,5 @@ import { InitialsAvatar } from '@twa-dev/mark42';
   theme="apple"
   className="MyAvatar"
   style={{ marginRight: 10 }}
-/>
+/>;
 ```

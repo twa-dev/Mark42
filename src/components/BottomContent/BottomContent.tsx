@@ -4,15 +4,15 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-} from 'react';
-import classNames from 'classnames';
+} from "react";
+import classNames from "classnames";
 
-import styles from './BottomContent.module.scss';
+import styles from "./BottomContent.module.scss";
 
 type Props = {
   className?: string;
   style?: CSSProperties;
-  'data-testid'?: string;
+  "data-testid"?: string;
   children: React.ReactNode;
 };
 export const BottomContent = forwardRef<HTMLDivElement, Props>((props, ref) => {
@@ -46,7 +46,7 @@ export const BottomContent = forwardRef<HTMLDivElement, Props>((props, ref) => {
           contentRef.current = el;
           if (!ref) return;
 
-          if (typeof ref === 'function') {
+          if (typeof ref === "function") {
             ref(el);
           } else {
             ref.current = el;

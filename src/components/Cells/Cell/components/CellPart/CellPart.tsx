@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import classnames from 'classnames';
+import { ReactNode } from "react";
+import classnames from "classnames";
 
-import styles from './CellPart.module.scss';
+import styles from "./CellPart.module.scss";
 
 export const CellPart = ({
   type,
@@ -10,17 +10,17 @@ export const CellPart = ({
   children,
 }: {
   type:
-    | 'avatar'
-    | 'switch'
-    | 'checkbox'
-    | 'radio'
-    | 'icon'
-    | 'roundedIcon'
-    | 'squareIcon'
-    | 'tabs'
-    | 'segmentedControl'
-    | 'picker'
-    | 'smallButton';
+    | "avatar"
+    | "switch"
+    | "checkbox"
+    | "radio"
+    | "icon"
+    | "roundedIcon"
+    | "squareIcon"
+    | "tabs"
+    | "segmentedControl"
+    | "picker"
+    | "smallButton";
   disabled?: boolean;
   className?: string;
   children: ReactNode;

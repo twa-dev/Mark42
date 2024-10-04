@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { useEffectEvent } from './useEffectEvent';
+import { useEffectEvent } from "./useEffectEvent";
 
 export const useDidMount = (fn: () => void | (() => void)) => {
   const onMount = useEffectEvent(fn);

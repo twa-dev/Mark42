@@ -1,7 +1,7 @@
-import { CSSProperties } from 'react';
-import Lottie from 'lottie-react';
+import { CSSProperties } from "react";
+import Lottie from "lottie-react";
 
-import SuccessAnimationData from './animation.json';
+import SuccessAnimationData from "./animation.json";
 
 const SuccessAnimation = ({
   className,

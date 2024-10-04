@@ -1,4 +1,4 @@
-@import '~mixins';
+@import "~mixins";
 
 .root {
   border-radius: 50%;
@@ -9,7 +9,7 @@
 
   &__apple {
     @include font-serif(
-      'ui-rounded',
+      "ui-rounded",
       var(--font_size),
       false,
       normal,
@@ -20,7 +20,7 @@
 
   &__material {
     @include font-serif(
-      'Roboto',
+      "Roboto",
       var(--font_size),
       false,
       normal,

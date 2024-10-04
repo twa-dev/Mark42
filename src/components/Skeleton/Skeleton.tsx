@@ -1,8 +1,8 @@
-import { forwardRef, ReactNode, useRef } from 'react';
-import classNames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
+import { forwardRef, ReactNode, useRef } from "react";
+import classNames from "classnames";
+import { CSSTransition } from "react-transition-group";
 
-import styles from './Skeleton.module.scss';
+import styles from "./Skeleton.module.scss";
 
 interface SkeletonProps {
   skeleton: ReactNode;

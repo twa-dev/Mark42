@@ -73,7 +73,7 @@ export const SegmentedControl = ({
       className={cn(
         themeClassName("root"),
         disabled && styles.disabled,
-        className
+        className,
       )}
       ref={ref}
       style={{
@@ -95,7 +95,7 @@ export const SegmentedControl = ({
           className={cn(
             themeClassName("item"),
             { [themeClassName("selectedItem")]: activeItemIndex === index },
-            itemClassName
+            itemClassName,
           )}
           onClick={() => onChange(index)}
           data-testid={`${dataTestId}-item-${index}`}

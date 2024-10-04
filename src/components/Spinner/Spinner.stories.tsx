@@ -1,12 +1,12 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { Spinner } from './Spinner';
+import { Spinner } from "./Spinner";
 
 export default {
-  title: 'Spinner',
+  title: "Spinner",
   component: Spinner,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof Spinner>;
 
@@ -16,4 +16,4 @@ export const Story: StoryFn<typeof Spinner> = (props) => {
 
 Story.args = {};
 
-Story.storyName = 'Spinner';
+Story.storyName = "Spinner";

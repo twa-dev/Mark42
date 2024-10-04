@@ -1,23 +1,23 @@
-import { useContext } from 'react';
-import classNames from 'classnames';
+import { useContext } from "react";
+import classNames from "classnames";
 
-import { AppearanceContext } from 'AppearanceProvider';
+import { AppearanceContext } from "AppearanceProvider";
 
-export function useTheme(): 'apple' | 'material';
+export function useTheme(): "apple" | "material";
 export function useTheme<S extends Record<string, string>>(
   styles: S,
 ): {
-  theme: 'apple' | 'material';
+  theme: "apple" | "material";
   themeClassName: (className: keyof S) => string;
 };
 
 export function useTheme<S extends Record<string, string>>(
   styles?: S,
 ):
-  | 'apple'
-  | 'material'
+  | "apple"
+  | "material"
   | {
-      theme: 'apple' | 'material';
+      theme: "apple" | "material";
       themeClassName: (className: keyof S) => string;
     } {
   const { theme } = useContext(AppearanceContext);

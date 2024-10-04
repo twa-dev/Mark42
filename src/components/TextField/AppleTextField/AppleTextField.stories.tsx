@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
 
-import { AppleTextField } from './AppleTextField';
+import { AppleTextField } from "./AppleTextField";
 
 export default {
-  title: 'TextField/AppleTextField',
+  title: "TextField/AppleTextField",
   component: AppleTextField,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
   argTypes: {
     type: {
-      control: 'inline-radio',
-      options: ['text', 'search', 'password'],
+      control: "inline-radio",
+      options: ["text", "search", "password"],
     },
     multiline: {
-      control: 'boolean',
-      if: { arg: 'type', eq: 'text' },
+      control: "boolean",
+      if: { arg: "type", eq: "text" },
     },
   },
 } as Meta<typeof AppleTextField>;
@@ -33,7 +33,7 @@ export const AppleTextFieldStory: StoryFn<typeof AppleTextField> = (props) => {
         {...props}
         onChange={(value) => setStateValue(value)}
         onClear={() => {
-          setStateValue('');
+          setStateValue("");
         }}
         value={stateValue}
       />
@@ -42,10 +42,10 @@ export const AppleTextFieldStory: StoryFn<typeof AppleTextField> = (props) => {
 };
 
 AppleTextFieldStory.args = {
-  label: 'Label',
-  type: 'text',
-  value: '',
+  label: "Label",
+  type: "text",
+  value: "",
   multiline: false,
 };
 
-AppleTextFieldStory.storyName = 'AppleTextField';
+AppleTextFieldStory.storyName = "AppleTextField";

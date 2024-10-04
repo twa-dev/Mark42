@@ -1,7 +1,7 @@
-import { CSSProperties } from 'react';
-import Lottie from 'lottie-react';
+import { CSSProperties } from "react";
+import Lottie from "lottie-react";
 
-import SpinnerAnimationData from './animation.json';
+import SpinnerAnimationData from "./animation.json";
 
 const SpinnerAnimation = ({
   className,

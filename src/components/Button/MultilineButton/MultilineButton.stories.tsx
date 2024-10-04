@@ -1,14 +1,14 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from "@storybook/react";
 
-import { MultilineButton } from './MultilineButton';
+import { MultilineButton } from "./MultilineButton";
 
-import { ReactComponent as SendIconSVG } from 'images/send.svg';
+import { ReactComponent as SendIconSVG } from "images/send.svg";
 
 export default {
-  title: 'MultilineButton',
+  title: "MultilineButton",
   component: MultilineButton,
   parameters: {
-    viewMode: 'story',
+    viewMode: "story",
   },
 } as Meta<typeof MultilineButton>;
 
@@ -22,7 +22,7 @@ export const MultilineButtonStory: StoryFn<typeof MultilineButton> = ({
     <div
       style={{
         padding: 40,
-        background: props.appearance === 'overlay' ? '#000' : 'transparent',
+        background: props.appearance === "overlay" ? "#000" : "transparent",
       }}
     >
       <MultilineButton {...props} icon={resolvedIcon} />
@@ -31,7 +31,7 @@ export const MultilineButtonStory: StoryFn<typeof MultilineButton> = ({
 };
 
 MultilineButtonStory.args = {
-  children: 'Label',
+  children: "Label",
 };
 
-MultilineButtonStory.storyName = 'MultilineButton';
+MultilineButtonStory.storyName = "MultilineButton";

@@ -1,4 +1,4 @@
-import { clamp } from 'lodash-es';
+import { clamp } from "lodash-es";
 
 type Props = {
   progress?: number;
@@ -11,8 +11,8 @@ type Props = {
 export const ProgressCircle = (props: Props) => {
   const {
     size = 16,
-    primaryColor = 'var(--tg-theme-accent-text-color)',
-    secondaryColor = 'var(--tg-theme-secondary-bg-color)',
+    primaryColor = "var(--tg-theme-accent-text-color)",
+    secondaryColor = "var(--tg-theme-secondary-bg-color)",
     className,
   } = props;
   const progress = clamp(props.progress ?? 0, 0, 1);
@@ -29,7 +29,7 @@ export const ProgressCircle = (props: Props) => {
       height={size}
       viewBox={`0 0 ${size} ${size}`}
       xmlns="http://www.w3.org/2000/svg"
-      style={{ rotate: '-90deg' }}
+      style={{ rotate: "-90deg" }}
       className={className}
     >
       <circle
